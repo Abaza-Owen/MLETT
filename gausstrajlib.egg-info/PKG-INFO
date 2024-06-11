@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: gausstrajlib
+Version: 0.0.1
+Summary: Library intended to help read gaussian BOMD trajectory output files
+Author: Owen M. Abaza
+Author-email: omabaza@syr.edu
+License: MIT License
+License-File: LICENSE.txt

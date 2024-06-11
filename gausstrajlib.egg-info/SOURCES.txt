@@ -1,0 +1,10 @@
+LICENSE.txt
+README.txt
+setup.py
+gausstrajlib/__init__.py
+gausstrajlib/translate.py
+gausstrajlib.egg-info/PKG-INFO
+gausstrajlib.egg-info/SOURCES.txt
+gausstrajlib.egg-info/dependency_links.txt
+gausstrajlib.egg-info/top_level.txt
+scripts/gt-ucli.py
