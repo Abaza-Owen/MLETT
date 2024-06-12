@@ -42,19 +42,26 @@ kcalmolang_per_hartbohr = kcalmol_per_hart/ang_per_bohr
 
 
 sgdml_conv = {
-                'dist':ang_per_bohr,
-                'eng':kcalmol_per_hart,
-                'force':(-1 * kcalmolang_per_hartbohr)
+                'dist':ang_per_bohr, #Conversion to angstrom from bohr
+                'eng':kcalmol_per_hart, #Conversion to kcal/mol from hartree
+                'force':(-1 * kcalmolang_per_hartbohr) #Conversion to kcal/mol*ang from hartree/bohr * -1 to convert from gradient to force
                 }
 msa_conv = {
-                'dist':ang_per_bohr,
+                'dist':ang_per_bohr, #Conversion to angstrom from bohr
                 'eng':1,  #No conversion needed for MSA
                 'force':1 #No conversion needed for MSA
                 }
 
+raw_conv = {
+                'dist':1, #Conversion from bohr to bohr
+                'eng':1, #Conversion from hartree to hartree
+                'force':1 #Conversion from hartree/bohr to hartree/bohr
+}
+
 conversions = {
-                'sgdml':sgdml_conv,
-                'msa':msa_conv               
+                'sgdml':sgdml_conv, #sgdml conversion dictionary
+                'msa':msa_conv, #MSA conversion dictionary
+                'raw':raw_conv  #Raw conversions (No change for debug or testing)             
                 }
 
 
@@ -137,7 +144,6 @@ class NullWriteError(Exception): #Custom error for used by the GaussianTranslato
                 super().__init__(self.message)
         
 class GaussianTranslator(): #Object that facillitates the reading of .log files and writing to .xyz files in proper format. Main class of module.
-
         
         def __init__(self): #initializes empty instance of TrajData class, which holds relavant atomic symbols, xyz coords, forces, energies, etc.
                 self.trainData = TrajData()
@@ -158,7 +164,6 @@ class GaussianTranslator(): #Object that facillitates the reading of .log files 
                     eng_conv = conversions[format]['eng']
                     f_conv = conversions[format]['force']
                     d_conv = conversions[format]['dist']
-                    print(conversions[format])
                     if num_atoms == 0:
                         raise NullWriteError()
 
@@ -179,9 +184,7 @@ class GaussianTranslator(): #Object that facillitates the reading of .log files 
                                 current_xyz = [comp * d_conv for comp in current_xyz]
                                 
                                 current_forces = a_f[j]
-                                print(current_forces)
                                 current_forces = [comp * f_conv for comp in current_forces]
-                                print(current_forces)
                                 symbol = a_s[j]
                                 coordinates = "\t".join(f"\t{coord:15.12f}" for coord in current_xyz)
                                 forces = "\t".join(f"\t{force:15.12f}" for force in current_forces) if grad else ""
@@ -232,7 +235,6 @@ class GaussianTranslator(): #Object that facillitates the reading of .log files 
                                    line = next(log)
                                 while (line[1] != '-'):
                                    tokens = line.split()
-                                   print(tokens)
                                    x = float(tokens[2])
                                    y = float(tokens[3])
                                    z = float(tokens[4])
