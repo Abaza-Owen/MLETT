@@ -24,6 +24,8 @@ class CommandLineHandler(): #small class which helps to clean and store command 
         include_gradient = False
         format = 'sgdml'
         eng_cnst = True
+        l_b = float('-inf')
+        u_b = float('inf')
         if not self.args['input path'].endswith('.log'):
             self.print_usage_and_exit()
         if self.args['mode']:
@@ -37,9 +39,17 @@ class CommandLineHandler(): #small class which helps to clean and store command 
             if 'r' in self.args['mode']:
                 format = 'raw'
 
-            if 'nc' in self.args['mode']:
-            #   l_b = float(input("Input the minimum potential energy to be included in Hartree. (New line for no lower bound)"))
-            #   u_b = float(input("Input the maximum potential energy to be inlcuded in Hartree. (New line for no upper bound)"))
+            if 'ec' in self.args['mode']:
+                try:
+                    l_b = float(input("Input the minimum potential energy to be included in Hartree. (New line for no lower bound)"))
+                except ValueError as e:
+                    print("No valid value found. Set lower bound to negative infinity.")
+                    l_b = float('-inf')
+                try:
+                    u_b = float(input("Input the maximum potential energy to be inlcuded in Hartree. (New line for no upper bound)"))
+                except ValueError as e:
+                    print("No valid value found. Set upper bound to infinity.")
+                    u_b = float('inf')
                 eng_cnst = False
 
             if 'd' in self.args['mode']:
@@ -47,19 +57,19 @@ class CommandLineHandler(): #small class which helps to clean and store command 
                 for filename in directory:
                     if filename.endswith('.log'):
                         file_out = filename.split(".")[0] + ".xyz"
-                        self.translate(filename, file_out, grad = include_gradient, format = format, eng_cnst = eng_cnst)
+                        self.translate(filename, file_out, grad = include_gradient, format = format, eng_cnst = eng_cnst, low_e = l_b, high_e = u_b)
             else:
                 self.output_path = self.input_path.split(".")[0] + ".xyz" if not self.args['output path'] else self.args['output path']
-                self.translate(self.input_path, self.output_path, grad = include_gradient, format = format, eng_cnst = eng_cnst)
+                self.translate(self.input_path, self.output_path, grad = include_gradient, format = format, eng_cnst = eng_cnst, low_e = l_b, high_e = u_b)
 
-    def translate(self, input_path, output_path, grad = False, format = 'sgdml', eng_cnst = True):
+    def translate(self, input_path, output_path, grad = False, format = 'sgdml', eng_cnst = True, low_e = float('-inf'), high_e = float('inf')):
         try:
                 self.translator.read(input_path)
         except Exception as e:
                 print(e)
                 sys.exit()
         else:
-                self.translator.write(output_path, grad = grad, format = format, eng_cnst = eng_cnst)
+                self.translator.write(output_path, grad = grad, format = format, eng_cnst = eng_cnst, low_e = low_e, high_e = high_e)
 
     
     def print_usage_and_exit(self):
@@ -79,7 +89,7 @@ class CommandLineHandler(): #small class which helps to clean and store command 
                 mode = string 
             elif string.endswith('.log'):
                 input_path = string
-            elif string.endswith('.xyz'):
+            elif '.' in string:
                 output_path = string
         args = {
             'mode':mode,
