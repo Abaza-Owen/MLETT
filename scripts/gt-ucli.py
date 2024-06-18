@@ -24,6 +24,7 @@ class CommandLineHandler(): #small class which helps to clean and store command 
             print(traceback.format_exc())
             self.print_usage_and_exit()
 
+        print(self.args)
         self.input_path = self.args["input path"]   
         include_gradient = False
         format = 'sgdml'
@@ -85,7 +86,7 @@ class CommandLineHandler(): #small class which helps to clean and store command 
                 print(e)
                 sys.exit()
         else:
-        
+                print(output_path)
                 self.translator.write(output_path, grad = grad, format = format, eng_cnst = eng_cnst, low_e = low_e, high_e = high_e)
 
     
@@ -108,7 +109,7 @@ class CommandLineHandler(): #small class which helps to clean and store command 
                 mode = string 
             elif string.endswith('.log'):
                 input_path = string
-            elif '.' in string:
+            elif '.' in string and not string.endswith('.py'):
                 output_path = string
         args = {
             'mode':mode,
