@@ -272,9 +272,9 @@ class GaussianTranslator(): #Object that facillitates the reading of .log files 
                                     tokens = line.split()
                                     sym = (tokens[1])
                                     sym_temp.append(atomic_numbers_to_symbols[sym])
-                                    x = float(tokens[3]) 
-                                    y = float(tokens[4])
-                                    z = float(tokens[5])
+                                    x = float(tokens[3]) / ang_per_bohr #convert first grabbed points from Angstron to a.u for consistency 
+                                    y = float(tokens[4]) / ang_per_bohr
+                                    z = float(tokens[5]) / ang_per_bohr 
                                     xyz_temp.append([x, y, z])
                                     num_atoms+=1
                                     line = next(log)
