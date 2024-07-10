@@ -1,0 +1,2366 @@
+ Entering Gaussian System, Link 0=g16
+ Input=BOMD-Complex_gr.gjf
+ Output=BOMD-Complex_gr.log
+ Initial command:
+ /usr/local/share/g16/l1.exe "/scr/omabaza/Gau-184149.inp" -scrdir="/scr/omabaza/"
+ Entering Link 1 = /usr/local/share/g16/l1.exe PID=    184150.
+  
+ Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2016,
+            Gaussian, Inc.  All Rights Reserved.
+  
+ This is part of the Gaussian(R) 16 program.  It is based on
+ the Gaussian(R) 09 system (copyright 2009, Gaussian, Inc.),
+ the Gaussian(R) 03 system (copyright 2003, Gaussian, Inc.),
+ the Gaussian(R) 98 system (copyright 1998, Gaussian, Inc.),
+ the Gaussian(R) 94 system (copyright 1995, Gaussian, Inc.),
+ the Gaussian 92(TM) system (copyright 1992, Gaussian, Inc.),
+ the Gaussian 90(TM) system (copyright 1990, Gaussian, Inc.),
+ the Gaussian 88(TM) system (copyright 1988, Gaussian, Inc.),
+ the Gaussian 86(TM) system (copyright 1986, Carnegie Mellon
+ University), and the Gaussian 82(TM) system (copyright 1983,
+ Carnegie Mellon University). Gaussian is a federally registered
+ trademark of Gaussian, Inc.
+  
+ This software contains proprietary and confidential information,
+ including trade secrets, belonging to Gaussian, Inc.
+  
+ This software is provided under written license and may be
+ used, copied, transmitted, or stored only in accord with that
+ written license.
+  
+ The following legend is applicable only to US Government
+ contracts under FAR:
+  
+                    RESTRICTED RIGHTS LEGEND
+  
+ Use, reproduction and disclosure by the US Government is
+ subject to restrictions as set forth in subparagraphs (a)
+ and (c) of the Commercial Computer Software - Restricted
+ Rights clause in FAR 52.227-19.
+  
+ Gaussian, Inc.
+ 340 Quinnipiac St., Bldg. 40, Wallingford CT 06492
+  
+  
+ ---------------------------------------------------------------
+ Warning -- This program may not be used in any manner that
+ competes with the business of Gaussian, Inc. or will provide
+ assistance to any competitor of Gaussian, Inc.  The licensee
+ of this program is prohibited from giving any competitor of
+ Gaussian, Inc. access to this program.  By using this program,
+ the user acknowledges that Gaussian, Inc. is engaged in the
+ business of creating and licensing software in the field of
+ computational chemistry and represents and warrants to the
+ licensee that it is not a competitor of Gaussian, Inc. and that
+ it will not use this program in any manner prohibited above.
+ ---------------------------------------------------------------
+  
+
+ Cite this work as:
+ Gaussian 16, Revision A.03,
+ M. J. Frisch, G. W. Trucks, H. B. Schlegel, G. E. Scuseria, 
+ M. A. Robb, J. R. Cheeseman, G. Scalmani, V. Barone, 
+ G. A. Petersson, H. Nakatsuji, X. Li, M. Caricato, A. V. Marenich, 
+ J. Bloino, B. G. Janesko, R. Gomperts, B. Mennucci, H. P. Hratchian, 
+ J. V. Ortiz, A. F. Izmaylov, J. L. Sonnenberg, D. Williams-Young, 
+ F. Ding, F. Lipparini, F. Egidi, J. Goings, B. Peng, A. Petrone, 
+ T. Henderson, D. Ranasinghe, V. G. Zakrzewski, J. Gao, N. Rega, 
+ G. Zheng, W. Liang, M. Hada, M. Ehara, K. Toyota, R. Fukuda, 
+ J. Hasegawa, M. Ishida, T. Nakajima, Y. Honda, O. Kitao, H. Nakai, 
+ T. Vreven, K. Throssell, J. A. Montgomery, Jr., J. E. Peralta, 
+ F. Ogliaro, M. J. Bearpark, J. J. Heyd, E. N. Brothers, K. N. Kudin, 
+ V. N. Staroverov, T. A. Keith, R. Kobayashi, J. Normand, 
+ K. Raghavachari, A. P. Rendell, J. C. Burant, S. S. Iyengar, 
+ J. Tomasi, M. Cossi, J. M. Millam, M. Klene, C. Adamo, R. Cammi, 
+ J. W. Ochterski, R. L. Martin, K. Morokuma, O. Farkas, 
+ J. B. Foresman, and D. J. Fox, Gaussian, Inc., Wallingford CT, 2016.
+ 
+ ******************************************
+ Gaussian 16:  ES64L-G16RevA.03 25-Dec-2016
+                 5-Jul-2024 
+ ******************************************
+ %chk=BOMD-Complex_gr.chk
+ -----------------------------------------------------------
+ # AM1 BOMD(NKE=23751,NTraj=10,GradOnly,Maxpoints=2) SCF=XQC
+ -----------------------------------------------------------
+ 1/6=10,26=1,38=1,42=2,71=-1,73=23751,172=1/1,18;
+ 2/12=2,17=6,18=5,40=1/2;
+ 3/5=2,25=1,41=700000,71=1/1,2,3;
+ 4/35=1/1;
+ 5/5=2,8=3,13=1,35=1,38=5/2,8;
+ 6/7=2,8=2,9=2,10=2,28=1/1;
+ 7//1,2,3,16;
+ 1/6=10,26=1,42=2,71=-1,73=23751/18(2);
+ 2//2;
+ 99//99;
+ 2/29=1/2;
+ 3/5=2,25=1,41=700000,71=1,135=20/1,2,3;
+ 4/5=5,16=3,35=1/1;
+ 5/5=2,8=3,13=1,35=1,38=5/2,8;
+ 7//1,2,3,16;
+ 1/6=10,26=1,42=2,71=-1,73=23751/18(-5);
+ 2/29=1/2;
+ 6/7=2,8=2,9=2,10=2,19=2,28=1/1;
+ 99/9=1/99;
+ ----------------------------------------------------------------------
+ BOMD starting from optimized structure of H-bonded complex AM1 level o
+ f theory 10 trajectories of 2 point each Random initial velocities of 
+ atoms for T=298K (=14156 microHartree nuclear kinetic energy for 6-ato
+ m system) Default StepSize
+ ----------------------------------------------------------------------
+ Symbolic Z-matrix:
+ Charge =  0 Multiplicity = 2
+ 6                    -1.49637  -0.30655  -0.00008 
+ 1                    -1.28189  -1.37608   0.00092 
+ 1                    -2.54575  -0.01018  -0.00134 
+ 8                    -0.61427   0.51494   0.00021 
+ 8                     2.06798  -0.1346   -0.00015 
+ 1                     1.17617   0.18288   0.00048 
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ ------------------------------------------------------------------------
+ INPUT DATA FOR L118
+ ------------------------------------------------------------------------
+
+ General parameters:
+ Max. points for each Traj.   =       2
+ Total Number of Trajectories =      10
+ Random Number Generator Seed =  398465
+ Fixed Trajectory Time Step   =   0.0250 femtosec
+
+ Sampling parameters:
+ Initial velocities randomly generated.
+
+ Integration parameters:
+ Hessian evaluation           = Gradient only.
+ Integration Scheme           = Velocity Verlet                     
+
+ Follow Rxn Path              = False
+ Project trans/rot in grad.   = True 
+ ------------------------------------------------------------------------
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0       -1.496366   -0.306552   -0.000080
+      2          1           0       -1.281893   -1.376082    0.000916
+      3          1           0       -2.545752   -0.010183   -0.001343
+      4          8           0       -0.614267    0.514938    0.000206
+      5          8           0        2.067975   -0.134601   -0.000152
+      6          1           0        1.176171    0.182877    0.000480
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.090823   0.000000
+     3  H    1.090434   1.860920   0.000000
+     4  O    1.205381   2.005413   2.001597   0.000000
+     5  O    3.568486   3.572519   4.615404   2.759769   0.000000
+     6  H    2.716983   2.910744   3.726927   1.820970   0.946629
+                    6
+     6  H    0.000000
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Largest Abelian subgroup         C1      NOp   1
+ Largest concise Abelian subgroup C1      NOp   1
+                         Standard orientation:                         
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.496366    0.306552   -0.000080
+      2          1           0        1.281893    1.376082    0.000916
+      3          1           0        2.545752    0.010183   -0.001343
+      4          8           0        0.614267   -0.514938    0.000206
+      5          8           0       -2.067975    0.134601   -0.000152
+      6          1           0       -1.176171   -0.182877    0.000480
+ ---------------------------------------------------------------------
+ Rotational constants (GHZ):          67.1164115           4.5618613           4.2715284
+ Standard basis: VSTO-6G (5D, 7F)
+ There are    15 symmetry adapted cartesian basis functions of A   symmetry.
+ There are    15 symmetry adapted basis functions of A   symmetry.
+    15 basis functions,    90 primitive gaussians,    15 cartesian basis functions
+    10 alpha electrons        9 beta electrons
+       nuclear repulsion energy        60.7023743064 Hartrees.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+ Do NDO integrals.
+ One-electron integrals computed using PRISM.
+ NBasis=    15 RedAO= F EigKep=  0.00D+00  NBF=    15
+ NBsUse=    15 1.00D-04 EigRej=  0.00D+00 NBFU=    15
+ Simple Huckel Guess.
+ Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7500 S= 0.5000
+ Keep J ints in memory in canonical form, NReq=859713.
+ Overlap will be assumed to be unity.
+ Requested convergence on RMS density matrix=1.00D-08 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ Rare condition: small coef for last iteration:  0.000D+00
+ SCF Done:  E(UAM1) = -0.474947557348E-01 A.U. after   23 cycles
+            NFock= 22  Conv=0.42D-08     -V/T= 0.9990
+ <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ <L.S>= 0.000000000000E+00
+ Annihilation of the first spin contaminant:
+ S**2 before annihilation     0.7513,   after     0.7500
+ QCSCF skips out because SCF is already converged.
+
+ **********************************************************************
+
+            Population analysis using the SCF density.
+
+ **********************************************************************
+
+ Orbital symmetries:
+ Alpha Orbitals:
+       Occupied  (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+       Virtual   (A) (A) (A) (A) (A)
+ Beta  Orbitals:
+       Occupied  (A) (A) (A) (A) (A) (A) (A) (A) (A)
+       Virtual   (A) (A) (A) (A) (A) (A)
+ The electronic state is 2-A.
+ Alpha  occ. eigenvalues --   -1.47818  -1.31797  -0.94176  -0.67034  -0.62978
+ Alpha  occ. eigenvalues --   -0.59065  -0.56364  -0.52691  -0.47040  -0.41269
+ Alpha virt. eigenvalues --    0.01686   0.10832   0.13719   0.18867   0.22595
+  Beta  occ. eigenvalues --   -1.47798  -1.18721  -0.94159  -0.66576  -0.62501
+  Beta  occ. eigenvalues --   -0.56890  -0.56369  -0.44029  -0.41230
+  Beta virt. eigenvalues --    0.00850   0.01684   0.10837   0.13737   0.19592
+  Beta virt. eigenvalues --    0.23549
+          Condensed to atoms (all electrons):
+               1          2          3          4          5          6
+     1  C    3.834770   0.000000   0.000000   0.000000   0.000000   0.000000
+     2  H    0.000000   0.929654   0.000000   0.000000   0.000000   0.000000
+     3  H    0.000000   0.000000   0.928462   0.000000   0.000000   0.000000
+     4  O    0.000000   0.000000   0.000000   6.292914   0.000000   0.000000
+     5  O    0.000000   0.000000   0.000000   0.000000   6.222622   0.000000
+     6  H    0.000000   0.000000   0.000000   0.000000   0.000000   0.791577
+          Atomic-Atomic Spin Densities.
+               1          2          3          4          5          6
+     1  C    0.000023   0.000000   0.000000   0.000000   0.000000   0.000000
+     2  H    0.000000   0.000050   0.000000   0.000000   0.000000   0.000000
+     3  H    0.000000   0.000000  -0.000206   0.000000   0.000000   0.000000
+     4  O    0.000000   0.000000   0.000000  -0.000998   0.000000   0.000000
+     5  O    0.000000   0.000000   0.000000   0.000000   1.031776   0.000000
+     6  H    0.000000   0.000000   0.000000   0.000000   0.000000  -0.030645
+ Mulliken charges and spin densities:
+               1          2
+     1  C    0.165230   0.000023
+     2  H    0.070346   0.000050
+     3  H    0.071538  -0.000206
+     4  O   -0.292914  -0.000998
+     5  O   -0.222622   1.031776
+     6  H    0.208423  -0.030645
+ Sum of Mulliken charges =   0.00000   1.00000
+ Mulliken charges and spin densities with hydrogens summed into heavy atoms:
+               1          2
+     1  C    0.307114  -0.000133
+     4  O   -0.292914  -0.000998
+     5  O   -0.014200   1.001130
+ Charge=              0.0000 electrons
+ Dipole moment (field-independent basis, Debye):
+    X=              3.3823    Y=              1.1233    Z=              0.0004  Tot=              3.5639
+ N-N= 6.070237430637D+01 E-N=-5.861033040607D+01  KE=-4.840436750448D+01
+ Calling FoFJK, ICntrl=      2127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 1 NMat=1 NMatS=1 NMatT=0.
+ ***** Axes restored to original set *****
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6          -0.029120071   -0.026842868   -0.000008658
+      2        1          -0.000002772   -0.016485249    0.000011014
+      3        1          -0.016749791    0.001052234   -0.000016697
+      4        8           0.029326031    0.045080861    0.000010952
+      5        8           0.006588577   -0.002795444   -0.000004440
+      6        1           0.009958026   -0.000009534    0.000007829
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.045080861 RMS     0.016938830
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+          ******** Start new trajectory calculation ********
+ Trajectory Number     1    Step Number     1
+ Get start point for trajectory     1
+
+ Start point information 
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.2454886351D-16  JY =  0.1222215609D-14  JZ = -0.9484955388D-14
+ Jtot =  0.9563409034D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   9.563409D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   3.217777231512D+13 Y=   1.838188565916D+13 Z=  -7.292605321020D+12
+ I=    2 X=   7.333893919398D+13 Y=   2.503563812371D+13 Z=  -7.564948512333D+12
+ I=    3 X=   6.989184981166D+12 Y=   7.413040165996D+13 Z=   4.981750177738D+13
+ I=    4 X=  -8.967685600223D+13 Y=  -3.554038974491D+13 Z=  -1.729021460765D+13
+ I=    5 X=   1.511877590328D+13 Y=  -1.528802849084D+13 Z=  -6.691657566568D+12
+ I=    6 X=   1.056634476239D+14 Y=   3.989557975048D+13 Z=   7.845068214675D+13
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     1    Step Number     2
+ Start point not scaled!
+
+ Summary information for step      2
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.2454886351D-16  JY =  0.1222215609D-14  JZ = -0.9484955388D-14
+ Jtot =  0.9563409034D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   9.563409D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   3.217777231512D+13 Y=   1.838188565916D+13 Z=  -7.292605321020D+12
+ I=    2 X=   7.333893919398D+13 Y=   2.503563812371D+13 Z=  -7.564948512333D+12
+ I=    3 X=   6.989184981166D+12 Y=   7.413040165996D+13 Z=   4.981750177738D+13
+ I=    4 X=  -8.967685600223D+13 Y=  -3.554038974491D+13 Z=  -1.729021460765D+13
+ I=    5 X=   1.511877590328D+13 Y=  -1.528802849084D+13 Z=  -6.691657566568D+12
+ I=    6 X=   1.056634476239D+14 Y=   3.989557975048D+13 Z=   7.845068214675D+13
+
+ Predicted information for step      3
+ Time (fs)     0.025000
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933400784415D+00 Y=   6.273466881815D-01 Z=  -2.020853699186D-04
+ I=    2 X=   2.529699124241D+00 Y=   2.648960436528D+00 Z=   1.544327031175D-03
+ I=    3 X=   4.916398863770D+00 Y=   6.900271729857D-02 Z=  -1.295591103043D-03
+ I=    4 X=   1.265681094222D+00 Y=  -9.254005957198D-01 Z=   2.829255406756D-04
+ I=    5 X=  -3.802366093643D+00 Y=   3.021781031483D-01 Z=  -3.273451830320D-04
+ I=    6 X=  -2.114566795534D+00 Y=  -2.966794759632D-01 Z=   2.862431895390D-03
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.552289    0.331978   -0.000107
+      2          1           0        1.338659    1.401769    0.000817
+      3          1           0        2.601646    0.036515   -0.000686
+      4          8           0        0.669770   -0.489701    0.000150
+      5          8           0       -2.012125    0.159906   -0.000173
+      6          1           0       -1.118981   -0.156996    0.001515
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.090914   0.000000
+     3  H    1.090160   1.859855   0.000000
+     4  O    1.205817   2.006259   2.002261   0.000000
+     5  O    3.568565   3.573511   4.615421   2.759447   0.000000
+     6  H    2.715654   2.910282   3.725656   1.819429   0.947701
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):          67.0868562           4.5620814           4.2716016
+ Standard basis: VSTO-6G (5D, 7F)
+    15 basis functions,    90 primitive gaussians,    15 cartesian basis functions
+    10 alpha electrons        9 beta electrons
+       nuclear repulsion energy        60.6993995784 Hartrees.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+ Do NDO integrals.
+ One-electron integrals computed using PRISM.
+ NBasis=    15 RedAO= F EigKep=  0.00D+00  NBF=    15
+ NBsUse=    15 1.00D-04 EigRej=  0.00D+00 NBFU=    15
+ Initial guess from the checkpoint file:  "BOMD-Complex_gr.chk"
+ B after Tr=     0.105538    0.047983    0.000062
+         Rot=    1.000000    0.000017    0.000001   -0.000005 Ang=   0.00 deg.
+ Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ Keep J ints in memory in canonical form, NReq=859713.
+ Overlap will be assumed to be unity.
+ Requested convergence on RMS density matrix=1.00D-08 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ SCF Done:  E(UAM1) = -0.475141228225E-01 A.U. after   23 cycles
+            NFock= 22  Conv=0.36D-08     -V/T= 0.9990
+ <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ <L.S>= 0.000000000000E+00
+ Annihilation of the first spin contaminant:
+ S**2 before annihilation     0.7513,   after     0.7500
+ QCSCF skips out because SCF is already converged.
+ Calling FoFJK, ICntrl=      2127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 1 NMat=1 NMatS=1 NMatT=0.
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6           0.028302125    0.026359526    0.000048845
+      2        1          -0.000130877    0.016357042   -0.000010466
+      3        1           0.016838615   -0.001243963   -0.000030692
+      4        8          -0.028358293   -0.044306211   -0.000018299
+      5        8          -0.005727438    0.002484147   -0.000008652
+      6        1          -0.010924132    0.000349458    0.000019266
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.044306211 RMS     0.016623547
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     1    Step Number     3
+
+ Summary information for step      3
+ Time (fs)     0.025000
+ EKin =       0.0237704; EPot =      -0.0475141; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.1774249673D-15  JY =  0.1219052499D-14  JZ = -0.1040283329D-13
+ Jtot =  0.1047551951D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02  Delta-E   4.928470D-10 A.U.
+ Total angular momentum   1.047552D-14  Delta-A   9.121105D-16 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933400784415D+00 Y=   6.273466881815D-01 Z=  -2.020853699186D-04
+ I=    2 X=   2.529699124241D+00 Y=   2.648960436528D+00 Z=   1.544327031175D-03
+ I=    3 X=   4.916398863770D+00 Y=   6.900271729857D-02 Z=  -1.295591103043D-03
+ I=    4 X=   1.265681094222D+00 Y=  -9.254005957198D-01 Z=   2.829255406756D-04
+ I=    5 X=  -3.802366093643D+00 Y=   3.021781031483D-01 Z=  -3.273451830320D-04
+ I=    6 X=  -2.114566795534D+00 Y=  -2.966794759632D-01 Z=   2.862431895390D-03
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   3.237204372982D+13 Y=   1.856188057874D+13 Z=  -7.292469371890D+12
+ I=    2 X=   7.333744369202D+13 Y=   2.541904559573D+13 Z=  -7.564942868348D+12
+ I=    3 X=   7.381302754859D+12 Y=   7.410359538868D+13 Z=   4.981694872856D+13
+ I=    4 X=  -8.984589487250D+13 Y=  -3.580233072441D+13 Z=  -1.729023602220D+13
+ I=    5 X=   1.508268490101D+13 Y=  -1.527255710866D+13 Z=  -6.691695944712D+12
+ I=    6 X=   1.054196651218D+14 Y=   3.989977070627D+13 Z=   7.845099864439D+13
+
+
+ Final analysis for traj   1
+ Traj calculation does not meet the product criterion.
+
+
+ Analysis of fragment    1
+
+ Instantaneous rotational analysis:
+ Q(CM): X= -0.188920653676D-16 Y=  0.590377042736D-17 Z= -0.922464129276D-20
+ V(CM): X= -0.295188521368D-02 Y= -0.118075408547D-02 Z=  0.000000000000D+00
+ Angular momentum in principle axes
+   JX = -0.1223842246D-14  JY = -0.1193246190D-13  JZ = -0.4589408424D-15
+ Jtot =  0.1200383537D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Angular momentum in original axes
+   JX = -0.4828243068D-15  JY = -0.1216254583D-14  JZ = -0.1193229521D-13
+ Jtot =  0.1200383537D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+
+ Etrn =  0.1849531587D-33 Erot =  0.9562306436D-34 Evib(kin) =  0.2377036758D-01 au
+ Epot = -0.4751412282D-01 Etot = -0.2374375524D-01 au
+
+ Trajectory summary for trajectory      1
+ Energy/gradient evaluations            2
+ Hessian evaluations                    1
+
+ Trajectory summary
+   Time (fs)   Kinetic (au)   Potent (au)   Delta E (au)     Delta A (h-bar)
+     0.000000     0.0237510    -0.0474948     0.0000000     0.0000000000000000
+     0.025000     0.0237704    -0.0475141     0.0000000     0.0000000000000009
+                             Max Error =      0.0000000     0.0000000000000009
+ Trajectory      1 has not met product criteria!
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+          ******** Start new trajectory calculation ********
+ Trajectory Number     2    Step Number     1
+ Get start point for trajectory     2
+
+ Start point information 
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.1174667094D-14  JY = -0.2469839491D-14  JZ =  0.1162688835D-13
+ Jtot =  0.1194422382D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   1.194422D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=  -5.241380867375D+13 Y=  -2.397720320805D+13 Z=  -1.044092691454D+13
+ I=    2 X=   5.818911994709D+12 Y=   8.229952703349D+13 Z=  -2.707631084690D+13
+ I=    3 X=   8.131609343643D+13 Y=   6.751542185694D+13 Z=   9.988443387962D+13
+ I=    4 X=   6.055442177770D+12 Y=  -3.652777349592D+13 Z=  -2.784117455172D+13
+ I=    5 X=  -9.936078488343D+11 Y=   1.264927688836D+13 Z=   2.923196226747D+12
+ I=    6 X=   7.356013688599D+13 Y=   2.804878674388D+13 Z=   6.248806386273D+13
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     2    Step Number     2
+ Start point not scaled!
+
+ Summary information for step      2
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.1174667094D-14  JY = -0.2469839491D-14  JZ =  0.1162688835D-13
+ Jtot =  0.1194422382D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   1.194422D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=  -5.241380867375D+13 Y=  -2.397720320805D+13 Z=  -1.044092691454D+13
+ I=    2 X=   5.818911994709D+12 Y=   8.229952703349D+13 Z=  -2.707631084690D+13
+ I=    3 X=   8.131609343643D+13 Y=   6.751542185694D+13 Z=   9.988443387962D+13
+ I=    4 X=   6.055442177770D+12 Y=  -3.652777349592D+13 Z=  -2.784117455172D+13
+ I=    5 X=  -9.936078488343D+11 Y=   1.264927688836D+13 Z=   2.923196226747D+12
+ I=    6 X=   7.356013688599D+13 Y=   2.804878674388D+13 Z=   6.248806386273D+13
+
+ Predicted information for step      3
+ Time (fs)     0.025000
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.932790297265D+00 Y=   6.270409877895D-01 Z=  -2.248064239125D-04
+ I=    2 X=   2.528017689386D+00 Y=   2.650386465259D+00 Z=   1.058440309150D-03
+ I=    3 X=   4.918249808737D+00 Y=   6.883798606158D-02 Z=  -4.878644102985D-05
+ I=    4 X=   1.266279516193D+00 Y=  -9.254067678491D-01 Z=   2.169715589503D-04
+ I=    5 X=  -3.802466812049D+00 Y=   3.023527390618D-01 Z=  -2.672427947434D-04
+ I=    6 X=  -2.115366256492D+00 Y=  -2.969744937750D-01 Z=   2.464918685397D-03
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.551966    0.331816   -0.000119
+      2          1           0        1.337769    1.402524    0.000560
+      3          1           0        2.602626    0.036427   -0.000026
+      4          8           0        0.670086   -0.489704    0.000115
+      5          8           0       -2.012179    0.159998   -0.000141
+      6          1           0       -1.119404   -0.157152    0.001304
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.091923   0.000000
+     3  H    1.091394   1.861742   0.000000
+     4  O    1.205241   2.006571   2.002879   0.000000
+     5  O    3.568284   3.572957   4.616459   2.759830   0.000000
+     6  H    2.715751   2.910376   3.727060   1.820128   0.947435
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):          67.0778799           4.5619877           4.2714830
+ Standard basis: VSTO-6G (5D, 7F)
+    15 basis functions,    90 primitive gaussians,    15 cartesian basis functions
+    10 alpha electrons        9 beta electrons
+       nuclear repulsion energy        60.6987777982 Hartrees.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+ Do NDO integrals.
+ One-electron integrals computed using PRISM.
+ NBasis=    15 RedAO= F EigKep=  0.00D+00  NBF=    15
+ NBsUse=    15 1.00D-04 EigRej=  0.00D+00 NBFU=    15
+ Initial guess from the checkpoint file:  "BOMD-Complex_gr.chk"
+ B after Tr=    -0.000012    0.000018    0.000007
+         Rot=    1.000000    0.000016    0.000007   -0.000008 Ang=   0.00 deg.
+ Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ Keep J ints in memory in canonical form, NReq=859713.
+ Overlap will be assumed to be unity.
+ Requested convergence on RMS density matrix=1.00D-08 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ SCF Done:  E(UAM1) = -0.475342168619E-01 A.U. after   18 cycles
+            NFock= 17  Conv=0.90D-09     -V/T= 0.9990
+ <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ <L.S>= 0.000000000000E+00
+ Annihilation of the first spin contaminant:
+ S**2 before annihilation     0.7513,   after     0.7500
+ QCSCF skips out because SCF is already converged.
+ Calling FoFJK, ICntrl=      2127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 1 NMat=1 NMatS=1 NMatT=0.
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6           0.029780899    0.027599749    0.000089030
+      2        1           0.000051524    0.015685708   -0.000028462
+      3        1           0.016014199   -0.000981252   -0.000036813
+      4        8          -0.029242442   -0.045124324   -0.000032456
+      5        8          -0.005933126    0.002559012   -0.000007679
+      6        1          -0.010671054    0.000261108    0.000016380
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.045124324 RMS     0.016995320
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     2    Step Number     3
+
+ Summary information for step      3
+ Time (fs)     0.025000
+ EKin =       0.0237905; EPot =      -0.0475342; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.2036920579D-14  JY =  0.2408594605D-14  JZ =  0.6730826848D-14
+ Jtot =  0.7433330577D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02  Delta-E  -1.802467D-09 A.U.
+ Total angular momentum   7.433331D-15  Delta-A  -4.510893D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.932790297265D+00 Y=   6.270409877895D-01 Z=  -2.248064239125D-04
+ I=    2 X=   2.528017689386D+00 Y=   2.650386465259D+00 Z=   1.058440309150D-03
+ I=    3 X=   4.918249808737D+00 Y=   6.883798606158D-02 Z=  -4.878644102985D-05
+ I=    4 X=   1.266279516193D+00 Y=  -9.254067678491D-01 Z=   2.169715589503D-04
+ I=    5 X=  -3.802466812049D+00 Y=   3.023527390618D-01 Z=  -2.672427947434D-04
+ I=    6 X=  -2.115366256492D+00 Y=  -2.969744937750D-01 Z=   2.464918685397D-03
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=  -5.221453425574D+13 Y=  -2.379301235222D+13 Z=  -1.044065500288D+13
+ I=    2 X=   5.819545871895D+12 Y=   8.267509721905D+13 Z=  -2.707651488173D+13
+ I=    3 X=   8.169858681047D+13 Y=   6.749168251733D+13 Z=   9.988380927153D+13
+ I=    4 X=   5.883812386295D+12 Y=  -3.679211188499D+13 Z=  -2.784123751549D+13
+ I=    5 X=  -1.030301600030D+12 Y=   1.266496765452D+13 Z=   2.923160708334D+12
+ I=    6 X=   7.331930887313D+13 Y=   2.805194627802D+13 Z=   6.248834657397D+13
+
+
+ Final analysis for traj   2
+ Traj calculation does not meet the product criterion.
+
+
+ Analysis of fragment    1
+
+ Instantaneous rotational analysis:
+ Q(CM): X= -0.151136522941D-15 Y= -0.531339338463D-16 Z= -0.922464129276D-20
+ V(CM): X= -0.147594260684D-02 Y=  0.516579912394D-03 Z= -0.590377042736D-03
+ Angular momentum in principle axes
+   JX =  0.3671526739D-14  JY =  0.6731132355D-14  JZ =  0.1988743650D-14
+ Jtot =  0.7921070173D-14  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Angular momentum in original axes
+   JX =  0.2061281515D-14  JY =  0.3632194359D-14  JZ =  0.6730648954D-14
+ Jtot =  0.7921070173D-14  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+
+ Etrn =  0.5175478845D-34 Erot =  0.7908113326D-34 Evib(kin) =  0.2379045932D-01 au
+ Epot = -0.4753421686D-01 Etot = -0.2374375754D-01 au
+
+ Trajectory summary for trajectory      2
+ Energy/gradient evaluations            1
+ Hessian evaluations                    0
+
+ Trajectory summary
+   Time (fs)   Kinetic (au)   Potent (au)   Delta E (au)     Delta A (h-bar)
+     0.000000     0.0237510    -0.0474948     0.0000000     0.0000000000000000
+     0.025000     0.0237905    -0.0475342    -0.0000000    -0.0000000000000045
+                             Max Error =     -0.0000000    -0.0000000000000045
+ Trajectory      2 has not met product criteria!
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+          ******** Start new trajectory calculation ********
+ Trajectory Number     3    Step Number     1
+ Get start point for trajectory     3
+
+ Start point information 
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.3700697926D-15  JY =  0.6185119020D-15  JZ = -0.6119309886D-14
+ Jtot =  0.6161611973D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   6.161612D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=  -7.369889467181D+12 Y=   1.344466684089D+13 Z=  -5.089430440535D+13
+ I=    2 X=   1.003056395352D+14 Y=   5.285106818855D+13 Z=   4.038906711728D+13
+ I=    3 X=   7.331941763906D+13 Y=   1.423593805168D+13 Z=   1.038057321286D+14
+ I=    4 X=  -2.027041270239D+13 Y=  -2.942186198254D+13 Z=  -2.307664829830D+12
+ I=    5 X=  -1.276995937736D+13 Y=  -2.018754069680D+13 Z=  -4.121432573886D+10
+ I=    6 X=  -1.656781921997D+13 Y=   8.415479139484D+13 Z=   4.077995933871D+13
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     3    Step Number     2
+ Start point not scaled!
+
+ Summary information for step      2
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.3700697926D-15  JY =  0.6185119020D-15  JZ = -0.6119309886D-14
+ Jtot =  0.6161611973D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   6.161612D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=  -7.369889467181D+12 Y=   1.344466684089D+13 Z=  -5.089430440535D+13
+ I=    2 X=   1.003056395352D+14 Y=   5.285106818855D+13 Z=   4.038906711728D+13
+ I=    3 X=   7.331941763906D+13 Y=   1.423593805168D+13 Z=   1.038057321286D+14
+ I=    4 X=  -2.027041270239D+13 Y=  -2.942186198254D+13 Z=  -2.307664829830D+12
+ I=    5 X=  -1.276995937736D+13 Y=  -2.018754069680D+13 Z=  -4.121432573886D+10
+ I=    6 X=  -1.656781921997D+13 Y=   8.415479139484D+13 Z=   4.077995933871D+13
+
+ Predicted information for step      3
+ Time (fs)     0.025000
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933115373751D+00 Y=   6.273110568738D-01 Z=  -5.167535287119D-04
+ I=    2 X=   2.530370669436D+00 Y=   2.649653117434D+00 Z=   2.738514246944D-03
+ I=    3 X=   4.918050669459D+00 Y=   6.751118000400D-02 Z=   4.886469780914D-05
+ I=    4 X=   1.266114953446D+00 Y=  -9.253623488427D-01 Z=   3.765813615187D-04
+ I=    5 X=  -3.802540425945D+00 Y=   3.021474763295D-01 Z=  -2.857733057530D-04
+ I=    6 X=  -2.117610691114D+00 Y=  -2.955772995546D-01 Z=   1.924327025641D-03
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.552138    0.331959   -0.000273
+      2          1           0        1.339014    1.402136    0.001449
+      3          1           0        2.602520    0.035725    0.000026
+      4          8           0        0.669999   -0.489681    0.000199
+      5          8           0       -2.012218    0.159890   -0.000151
+      6          1           0       -1.120591   -0.156413    0.001018
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.091194   0.000000
+     3  H    1.091356   1.861055   0.000000
+     4  O    1.205512   2.006627   2.002671   0.000000
+     5  O    3.568506   3.574064   4.616408   2.759752   0.000000
+     6  H    2.716982   2.911827   3.728066   1.821341   0.946069
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):          67.0859325           4.5614821           4.2710726
+ Standard basis: VSTO-6G (5D, 7F)
+    15 basis functions,    90 primitive gaussians,    15 cartesian basis functions
+    10 alpha electrons        9 beta electrons
+       nuclear repulsion energy        60.6992372655 Hartrees.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+ Do NDO integrals.
+ One-electron integrals computed using PRISM.
+ NBasis=    15 RedAO= F EigKep=  0.00D+00  NBF=    15
+ NBsUse=    15 1.00D-04 EigRej=  0.00D+00 NBFU=    15
+ Initial guess from the checkpoint file:  "BOMD-Complex_gr.chk"
+ B after Tr=    -0.000004   -0.000009    0.000017
+         Rot=    1.000000   -0.000067    0.000007    0.000019 Ang=  -0.01 deg.
+ Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ Keep J ints in memory in canonical form, NReq=859713.
+ Overlap will be assumed to be unity.
+ Requested convergence on RMS density matrix=1.00D-08 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ SCF Done:  E(UAM1) = -0.475628178661E-01 A.U. after   12 cycles
+            NFock= 11  Conv=0.95D-08     -V/T= 0.9990
+ <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ <L.S>= 0.000000000000E+00
+ Annihilation of the first spin contaminant:
+ S**2 before annihilation     0.7513,   after     0.7500
+ QCSCF skips out because SCF is already converged.
+ Calling FoFJK, ICntrl=      2127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 1 NMat=1 NMatS=1 NMatT=0.
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6           0.029481882    0.026686892    0.000226144
+      2        1          -0.000094448    0.016115332   -0.000070084
+      3        1           0.016083473   -0.000985579   -0.000088107
+      4        8          -0.028945656   -0.044624149   -0.000074359
+      5        8          -0.007053887    0.002954765   -0.000007870
+      6        1          -0.009471364   -0.000147262    0.000014276
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.044624149 RMS     0.016796470
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     3    Step Number     3
+
+ Summary information for step      3
+ Time (fs)     0.025000
+ EKin =       0.0238191; EPot =      -0.0475628; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.2387913913D-14  JY =  0.8520129690D-14  JZ = -0.7344240439D-14
+ Jtot =  0.1149924391D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02  Delta-E  -3.347817D-09 A.U.
+ Total angular momentum   1.149924D-14  Delta-A   5.337632D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933115373751D+00 Y=   6.273110568738D-01 Z=  -5.167535287119D-04
+ I=    2 X=   2.530370669436D+00 Y=   2.649653117434D+00 Z=   2.738514246944D-03
+ I=    3 X=   4.918050669459D+00 Y=   6.751118000400D-02 Z=   4.886469780914D-05
+ I=    4 X=   1.266114953446D+00 Y=  -9.253623488427D-01 Z=   3.765813615187D-04
+ I=    5 X=  -3.802540425945D+00 Y=   3.021474763295D-01 Z=  -2.857733057530D-04
+ I=    6 X=  -2.117610691114D+00 Y=  -2.955772995546D-01 Z=   1.924327025641D-03
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=  -7.171626686423D+12 Y=   1.362576930784D+13 Z=  -5.089356860649D+13
+ I=    2 X=   1.003045693089D+14 Y=   5.323165389516D+13 Z=   4.038837726341D+13
+ I=    3 X=   7.370271972983D+13 Y=   1.421214820859D+13 Z=   1.038045086882D+14
+ I=    4 X=  -2.044117278775D+13 Y=  -2.968473465322D+13 Z=  -2.307850597588D+12
+ I=    5 X=  -1.280993742082D+13 Y=  -2.017069020960D+13 Z=  -4.125040453774D+10
+ I=    6 X=  -1.679464181559D+13 Y=   8.415318354393D+13 Z=   4.078021745940D+13
+
+
+ Final analysis for traj   3
+ Traj calculation does not meet the product criterion.
+
+
+ Analysis of fragment    1
+
+ Instantaneous rotational analysis:
+ Q(CM): X= -0.103906359522D-15 Y= -0.129882949402D-16 Z=  0.415108858174D-19
+ V(CM): X=  0.147594260684D-03 Y=  0.885565564105D-03 Z=  0.295188521368D-03
+ Angular momentum in principle axes
+   JX =  0.1835763370D-14  JY = -0.8566895725D-14  JZ =  0.8413915444D-15
+ Jtot =  0.8801685591D-14  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Angular momentum in original axes
+   JX =  0.8778406363D-15  JY =  0.1817461081D-14  JZ = -0.8567140730D-14
+ Jtot =  0.8801685591D-14  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+
+ Etrn =  0.1529574659D-33 Erot =  0.5719520985D-34 Evib(kin) =  0.2381905878D-01 au
+ Epot = -0.4756281787D-01 Etot = -0.2374375908D-01 au
+
+ Trajectory summary for trajectory      3
+ Energy/gradient evaluations            1
+ Hessian evaluations                    0
+
+ Trajectory summary
+   Time (fs)   Kinetic (au)   Potent (au)   Delta E (au)     Delta A (h-bar)
+     0.000000     0.0237510    -0.0474948     0.0000000     0.0000000000000000
+     0.025000     0.0238191    -0.0475628    -0.0000000     0.0000000000000053
+                             Max Error =     -0.0000000     0.0000000000000053
+ Trajectory      3 has not met product criteria!
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+          ******** Start new trajectory calculation ********
+ Trajectory Number     4    Step Number     1
+ Get start point for trajectory     4
+
+ Start point information 
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.7089362004D-15  JY = -0.4883595129D-14  JZ = -0.9331100187D-14
+ Jtot =  0.1055563938D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   1.055564D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   4.457070439538D+13 Y=  -1.812702665657D+13 Z=  -4.096189595850D+13
+ I=    2 X=   8.669323838251D+13 Y=   3.462620511269D+13 Z=   2.604378987490D+13
+ I=    3 X=   1.843213531954D+13 Y=   3.186897716105D+13 Z=   1.060988430960D+14
+ I=    4 X=  -1.636256627233D+13 Y=   1.178798966007D+13 Z=  -1.706883728551D+13
+ I=    5 X=  -4.780278355715D+13 Y=  -1.534747925351D+13 Z=  -1.143975877241D+13
+ I=    6 X=  -3.299832682306D+12 Y=   1.023475328249D+13 Z=   1.227743737185D+14
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     4    Step Number     2
+ Start point not scaled!
+
+ Summary information for step      2
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.7089362004D-15  JY = -0.4883595129D-14  JZ = -0.9331100187D-14
+ Jtot =  0.1055563938D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   1.055564D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   4.457070439538D+13 Y=  -1.812702665657D+13 Z=  -4.096189595850D+13
+ I=    2 X=   8.669323838251D+13 Y=   3.462620511269D+13 Z=   2.604378987490D+13
+ I=    3 X=   1.843213531954D+13 Y=   3.186897716105D+13 Z=   1.060988430960D+14
+ I=    4 X=  -1.636256627233D+13 Y=   1.178798966007D+13 Z=  -1.706883728551D+13
+ I=    5 X=  -4.780278355715D+13 Y=  -1.534747925351D+13 Z=  -1.143975877241D+13
+ I=    6 X=  -3.299832682306D+12 Y=   1.023475328249D+13 Z=   1.227743737185D+14
+
+ Predicted information for step      3
+ Time (fs)     0.025000
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933490222699D+00 Y=   6.270832078021D-01 Z=  -4.450725450808D-04
+ I=    2 X=   2.530031683113D+00 Y=   2.649199268091D+00 Z=   2.381277288483D-03
+ I=    3 X=   4.916683824786D+00 Y=   6.795029129850D-02 Z=   1.059694838343D-04
+ I=    4 X=   1.266139381368D+00 Y=  -9.251047463291D-01 Z=   2.843093688710D-04
+ I=    5 X=  -3.802759415900D+00 Y=   3.021777315220D-01 Z=  -3.570255326703D-04
+ I=    6 X=  -2.117280281665D+00 Y=  -2.974181123279D-01 Z=   3.966214032000D-03
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.552336    0.331838   -0.000236
+      2          1           0        1.338835    1.401896    0.001260
+      3          1           0        2.601797    0.035958    0.000056
+      4          8           0        0.670012   -0.489544    0.000150
+      5          8           0       -2.012334    0.159906   -0.000189
+      6          1           0       -1.120416   -0.157387    0.002099
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.091150   0.000000
+     3  H    1.090373   1.860339   0.000000
+     4  O    1.205473   2.006208   2.001985   0.000000
+     5  O    3.568814   3.573916   4.615795   2.759849   0.000000
+     6  H    2.717159   2.911921   3.727232   1.820980   0.946676
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):          67.1158024           4.5610522           4.2708168
+ Standard basis: VSTO-6G (5D, 7F)
+    15 basis functions,    90 primitive gaussians,    15 cartesian basis functions
+    10 alpha electrons        9 beta electrons
+       nuclear repulsion energy        60.6999746379 Hartrees.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+ Do NDO integrals.
+ One-electron integrals computed using PRISM.
+ NBasis=    15 RedAO= F EigKep=  0.00D+00  NBF=    15
+ NBsUse=    15 1.00D-04 EigRej=  0.00D+00 NBFU=    15
+ Initial guess from the checkpoint file:  "BOMD-Complex_gr.chk"
+ B after Tr=    -0.000027   -0.000038    0.000038
+         Rot=    1.000000    0.000024   -0.000006   -0.000007 Ang=   0.00 deg.
+ Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ Keep J ints in memory in canonical form, NReq=859713.
+ Overlap will be assumed to be unity.
+ Requested convergence on RMS density matrix=1.00D-08 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ SCF Done:  E(UAM1) = -0.475237763750E-01 A.U. after   30 cycles
+            NFock= 29  Conv=0.36D-08     -V/T= 0.9990
+ <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ <L.S>= 0.000000000000E+00
+ Annihilation of the first spin contaminant:
+ S**2 before annihilation     0.7513,   after     0.7500
+ QCSCF skips out because SCF is already converged.
+ Calling FoFJK, ICntrl=      2127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 1 NMat=1 NMatS=1 NMatT=0.
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6           0.028947223    0.026932236    0.000196917
+      2        1          -0.000072976    0.016213512   -0.000060540
+      3        1           0.016745980   -0.001158801   -0.000077655
+      4        8          -0.029074870   -0.044793055   -0.000073025
+      5        8          -0.006549283    0.002779611   -0.000013767
+      6        1          -0.009996075    0.000026497    0.000028069
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.044793055 RMS     0.016849502
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     4    Step Number     3
+
+ Summary information for step      3
+ Time (fs)     0.025000
+ EKin =       0.0237800; EPot =      -0.0475238; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.7238981867D-15  JY = -0.9809672788D-14  JZ = -0.1820320725D-13
+ Jtot =  0.2069083040D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02  Delta-E  -8.995106D-10 A.U.
+ Total angular momentum   2.069083D-14  Delta-A   1.013519D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933490222699D+00 Y=   6.270832078021D-01 Z=  -4.450725450808D-04
+ I=    2 X=   2.530031683113D+00 Y=   2.649199268091D+00 Z=   2.381277288483D-03
+ I=    3 X=   4.916683824786D+00 Y=   6.795029129850D-02 Z=   1.059694838343D-04
+ I=    4 X=   1.266139381368D+00 Y=  -9.251047463291D-01 Z=   2.843093688710D-04
+ I=    5 X=  -3.802759415900D+00 Y=   3.021777315220D-01 Z=  -3.570255326703D-04
+ I=    6 X=  -2.117280281665D+00 Y=  -2.974181123279D-01 Z=   3.966214032000D-03
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   4.476715831282D+13 Y=  -1.794509413808D+13 Z=  -4.096125903728D+13
+ I=    2 X=   8.669241882911D+13 Y=   3.500793698989D+13 Z=   2.604321169028D+13
+ I=    3 X=   1.882317165753D+13 Y=   3.184316508892D+13 Z=   1.060977416164D+14
+ I=    4 X=  -1.653370500818D+13 Y=   1.152462202626D+13 Z=  -1.706901918426D+13
+ I=    5 X=  -4.784128290317D+13 Y=  -1.533114204135D+13 Z=  -1.143981212605D+13
+ I=    6 X=  -3.532780860624D+12 Y=   1.023517391876D+13 Z=   1.227747928052D+14
+
+
+ Final analysis for traj   4
+ Traj calculation does not meet the product criterion.
+
+
+ Analysis of fragment    1
+
+ Instantaneous rotational analysis:
+ Q(CM): X= -0.160582555624D-15 Y=  0.247958357949D-16 Z=  0.000000000000D+00
+ V(CM): X=  0.507355271102D-03 Y=  0.258289956197D-03 Z=  0.295188521368D-03
+ Angular momentum in principle axes
+   JX = -0.7343053479D-14  JY = -0.1805167314D-13  JZ =  0.6119211232D-15
+ Jtot =  0.1949763536D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Angular momentum in original axes
+   JX =  0.4665472206D-15  JY = -0.7356378516D-14  JZ = -0.1805059040D-13
+ Jtot =  0.1949763536D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+
+ Etrn =  0.1306469896D-33 Erot =  0.2527121420D-33 Evib(kin) =  0.2378001974D-01 au
+ Epot = -0.4752377638D-01 Etot = -0.2374375663D-01 au
+
+ Trajectory summary for trajectory      4
+ Energy/gradient evaluations            1
+ Hessian evaluations                    0
+
+ Trajectory summary
+   Time (fs)   Kinetic (au)   Potent (au)   Delta E (au)     Delta A (h-bar)
+     0.000000     0.0237510    -0.0474948     0.0000000     0.0000000000000000
+     0.025000     0.0237800    -0.0475238    -0.0000000     0.0000000000000101
+                             Max Error =     -0.0000000     0.0000000000000101
+ Trajectory      4 has not met product criteria!
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+          ******** Start new trajectory calculation ********
+ Trajectory Number     5    Step Number     1
+ Get start point for trajectory     5
+
+ Start point information 
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.3301540835D-15  JY = -0.1218052157D-14  JZ = -0.3671356361D-14
+ Jtot =  0.3882204310D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   3.882204D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   6.530313391793D+12 Y=  -1.331017303872D+13 Z=  -2.399672404176D+13
+ I=    2 X=   1.376730994122D+14 Y=  -1.879866694301D+13 Z=   3.848131941608D+13
+ I=    3 X=   6.428468206380D+13 Y=  -1.979727648535D+13 Z=   1.486599077198D+13
+ I=    4 X=   1.906739001033D+13 Y=   3.674072243470D+13 Z=   2.625650543065D+12
+ I=    5 X=  -8.412463276284D+13 Y=  -2.449323283267D+13 Z=  -1.485304480244D+13
+ I=    6 X=   3.468410058212D+13 Y=   3.573274341553D+13 Z=   7.816803063725D+13
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     5    Step Number     2
+ Start point not scaled!
+
+ Summary information for step      2
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.3301540835D-15  JY = -0.1218052157D-14  JZ = -0.3671356361D-14
+ Jtot =  0.3882204310D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   3.882204D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   6.530313391793D+12 Y=  -1.331017303872D+13 Z=  -2.399672404176D+13
+ I=    2 X=   1.376730994122D+14 Y=  -1.879866694301D+13 Z=   3.848131941608D+13
+ I=    3 X=   6.428468206380D+13 Y=  -1.979727648535D+13 Z=   1.486599077198D+13
+ I=    4 X=   1.906739001033D+13 Y=   3.674072243470D+13 Z=   2.625650543065D+12
+ I=    5 X=  -8.412463276284D+13 Y=  -2.449323283267D+13 Z=  -1.485304480244D+13
+ I=    6 X=   3.468410058212D+13 Y=   3.573274341553D+13 Z=   7.816803063725D+13
+
+ Predicted information for step      3
+ Time (fs)     0.025000
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933215689824D+00 Y=   6.271179704488D-01 Z=  -3.226369629186D-04
+ I=    2 X=   2.531301222223D+00 Y=   2.647868841465D+00 Z=   2.691006068832D-03
+ I=    3 X=   4.917825679632D+00 Y=   6.666365912012D-02 Z=  -2.165980101054D-03
+ I=    4 X=   1.266360853794D+00 Y=  -9.249487669594D-01 Z=   4.074194837060D-04
+ I=    5 X=  -3.802986463543D+00 Y=   3.021205614761D-01 Z=  -3.783619613594D-04
+ I=    6 X=  -2.116334376991D+00 Y=  -2.967831420664D-01 Z=   2.855393093431D-03
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.552191    0.331857   -0.000171
+      2          1           0        1.339507    1.401192    0.001424
+      3          1           0        2.602401    0.035277   -0.001146
+      4          8           0        0.670129   -0.489462    0.000216
+      5          8           0       -2.012454    0.159875   -0.000200
+      6          1           0       -1.119916   -0.157051    0.001511
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.090282   0.000000
+     3  H    1.091285   1.860278   0.000000
+     4  O    1.205237   2.005652   2.002256   0.000000
+     5  O    3.568791   3.574424   4.616537   2.760053   0.000000
+     6  H    2.716466   2.911508   3.727284   1.820648   0.947137
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):          67.1471283           4.5606918           4.2706276
+ Standard basis: VSTO-6G (5D, 7F)
+    15 basis functions,    90 primitive gaussians,    15 cartesian basis functions
+    10 alpha electrons        9 beta electrons
+       nuclear repulsion energy        60.7002943509 Hartrees.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+ Do NDO integrals.
+ One-electron integrals computed using PRISM.
+ NBasis=    15 RedAO= F EigKep=  0.00D+00  NBF=    15
+ NBsUse=    15 1.00D-04 EigRej=  0.00D+00 NBFU=    15
+ Initial guess from the checkpoint file:  "BOMD-Complex_gr.chk"
+ B after Tr=     0.000065   -0.000036   -0.000061
+         Rot=    1.000000   -0.000017   -0.000009    0.000015 Ang=  -0.00 deg.
+ Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ Keep J ints in memory in canonical form, NReq=859713.
+ Overlap will be assumed to be unity.
+ Requested convergence on RMS density matrix=1.00D-08 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ SCF Done:  E(UAM1) = -0.474930207522E-01 A.U. after   11 cycles
+            NFock= 10  Conv=0.95D-08     -V/T= 0.9990
+ <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ <L.S>= 0.000000000000E+00
+ Annihilation of the first spin contaminant:
+ S**2 before annihilation     0.7513,   after     0.7500
+ QCSCF skips out because SCF is already converged.
+ Calling FoFJK, ICntrl=      2127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 1 NMat=1 NMatS=1 NMatT=0.
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6           0.030022884    0.026576737    0.000082428
+      2        1          -0.000178815    0.016787861   -0.000016661
+      3        1           0.016198057   -0.001000206   -0.000049742
+      4        8          -0.029476227   -0.045174976   -0.000026750
+      5        8          -0.006171785    0.002642652   -0.000010062
+      6        1          -0.010394113    0.000167931    0.000020787
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.045174976 RMS     0.017022397
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     5    Step Number     3
+
+ Summary information for step      3
+ Time (fs)     0.025000
+ EKin =       0.0237493; EPot =      -0.0474930; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.9109752590D-15  JY =  0.7323479176D-14  JZ = -0.2019444405D-13
+ Jtot =  0.2150066961D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02  Delta-E   7.197848D-10 A.U.
+ Total angular momentum   2.150067D-14  Delta-A   1.761847D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933215689824D+00 Y=   6.271179704488D-01 Z=  -3.226369629186D-04
+ I=    2 X=   2.531301222223D+00 Y=   2.647868841465D+00 Z=   2.691006068832D-03
+ I=    3 X=   4.917825679632D+00 Y=   6.666365912012D-02 Z=  -2.165980101054D-03
+ I=    4 X=   1.266360853794D+00 Y=  -9.249487669594D-01 Z=   4.074194837060D-04
+ I=    5 X=  -3.802986463543D+00 Y=   3.021205614761D-01 Z=  -3.783619613594D-04
+ I=    6 X=  -2.116334376991D+00 Y=  -2.967831420664D-01 Z=   2.855393093431D-03
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   6.730406495120D+12 Y=  -1.312944324876D+13 Z=  -2.399647445738D+13
+ I=    2 X=   1.376710442686D+14 Y=  -1.841022999462D+13 Z=   3.848125363540D+13
+ I=    3 X=   6.466932183591D+13 Y=  -1.982123709271D+13 Z=   1.486521511548D+13
+ I=    4 X=   1.889507513155D+13 Y=   3.647623561504D+13 Z=   2.625604224154D+12
+ I=    5 X=  -8.416202588400D+13 Y=  -2.447729696622D+13 Z=  -1.485308729718D+13
+ I=    6 X=   3.444650562588D+13 Y=   3.573481518943D+13 Z=   7.816836466824D+13
+
+
+ Final analysis for traj   5
+ Traj calculation does not meet the product criterion.
+
+
+ Analysis of fragment    1
+
+ Instantaneous rotational analysis:
+ Q(CM): X=  0.141690490257D-15 Y=  0.566761961027D-16 Z= -0.276739238783D-19
+ V(CM): X=  0.339466799573D-02 Y= -0.590377042736D-03 Z= -0.590377042736D-03
+ Angular momentum in principle axes
+   JX =  0.6119211232D-14  JY = -0.2019339707D-13  JZ =  0.7649014040D-15
+ Jtot =  0.2111404995D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Angular momentum in original axes
+   JX =  0.8866800801D-15  JY =  0.6099878115D-14  JZ = -0.2019426628D-13
+ Jtot =  0.2111404995D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+
+ Etrn =  0.4581702978D-33 Erot =  0.2965959873D-33 Evib(kin) =  0.2374926574D-01 au
+ Epot = -0.4749302075D-01 Etot = -0.2374375501D-01 au
+
+ Trajectory summary for trajectory      5
+ Energy/gradient evaluations            1
+ Hessian evaluations                    0
+
+ Trajectory summary
+   Time (fs)   Kinetic (au)   Potent (au)   Delta E (au)     Delta A (h-bar)
+     0.000000     0.0237510    -0.0474948     0.0000000     0.0000000000000000
+     0.025000     0.0237493    -0.0474930     0.0000000     0.0000000000000176
+                             Max Error =      0.0000000     0.0000000000000176
+ Trajectory      5 has not met product criteria!
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+          ******** Start new trajectory calculation ********
+ Trajectory Number     6    Step Number     1
+ Get start point for trajectory     6
+
+ Start point information 
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.1640627691D-14  JY =  0.9824770409D-14  JZ = -0.3672997816D-14
+ Jtot =  0.1061643470D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   1.061643D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   2.136047386099D+13 Y=  -3.763683677211D+13 Z=  -3.306909943080D+13
+ I=    2 X=   4.173459812516D+13 Y=   8.725273775696D+13 Z=   6.147112416538D+13
+ I=    3 X=   6.332468527503D+13 Y=  -1.206193032759D+13 Z=  -1.055712107707D+12
+ I=    4 X=  -1.965125811568D+13 Y=   2.125425625640D+13 Z=   1.362977642342D+13
+ I=    5 X=  -4.690241093232D+13 Y=  -2.981920573915D+13 Z=  -1.704956752594D+13
+ I=    6 X=   8.637071731914D+13 Y=   8.880100194043D+13 Z=   6.731751547699D+13
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     6    Step Number     2
+ Start point not scaled!
+
+ Summary information for step      2
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.1640627691D-14  JY =  0.9824770409D-14  JZ = -0.3672997816D-14
+ Jtot =  0.1061643470D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   1.061643D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   2.136047386099D+13 Y=  -3.763683677211D+13 Z=  -3.306909943080D+13
+ I=    2 X=   4.173459812516D+13 Y=   8.725273775696D+13 Z=   6.147112416538D+13
+ I=    3 X=   6.332468527503D+13 Y=  -1.206193032759D+13 Z=  -1.055712107707D+12
+ I=    4 X=  -1.965125811568D+13 Y=   2.125425625640D+13 Z=   1.362977642342D+13
+ I=    5 X=  -4.690241093232D+13 Y=  -2.981920573915D+13 Z=  -1.704956752594D+13
+ I=    6 X=   8.637071731914D+13 Y=   8.880100194043D+13 Z=   6.731751547699D+13
+
+ Predicted information for step      3
+ Time (fs)     0.025000
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933322717288D+00 Y=   6.269424078756D-01 Z=  -3.881111925817D-04
+ I=    2 X=   2.528912089004D+00 Y=   2.650509813864D+00 Z=   3.263515598309D-03
+ I=    3 X=   4.917801773064D+00 Y=   6.685629056860D-02 Z=  -2.562474404661D-03
+ I=    4 X=   1.266118823777D+00 Y=  -9.250455727584D-01 Z=   4.762062027404D-04
+ I=    5 X=  -3.802753787677D+00 Y=   3.020872688542D-01 Z=  -3.920924105633D-04
+ I=    6 X=  -2.115047237715D+00 Y=  -2.954615961007D-01 Z=   2.585185347140D-03
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.552248    0.331764   -0.000205
+      2          1           0        1.338243    1.402589    0.001727
+      3          1           0        2.602389    0.035379   -0.001356
+      4          8           0        0.670001   -0.489513    0.000252
+      5          8           0       -2.012331    0.159858   -0.000207
+      6          1           0       -1.119235   -0.156352    0.001368
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.092003   0.000000
+     3  H    1.091165   1.862079   0.000000
+     4  O    1.205344   2.006639   2.002407   0.000000
+     5  O    3.568721   3.573615   4.616398   2.759816   0.000000
+     6  H    2.715709   2.910239   3.726560   1.819990   0.947423
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):          67.1143613           4.5612492           4.2709838
+ Standard basis: VSTO-6G (5D, 7F)
+    15 basis functions,    90 primitive gaussians,    15 cartesian basis functions
+    10 alpha electrons        9 beta electrons
+       nuclear repulsion energy        60.6982454326 Hartrees.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+ Do NDO integrals.
+ One-electron integrals computed using PRISM.
+ NBasis=    15 RedAO= F EigKep=  0.00D+00  NBF=    15
+ NBsUse=    15 1.00D-04 EigRej=  0.00D+00 NBFU=    15
+ Initial guess from the checkpoint file:  "BOMD-Complex_gr.chk"
+ B after Tr=    -0.000021    0.000080   -0.000004
+         Rot=    1.000000   -0.000023    0.000000   -0.000012 Ang=  -0.00 deg.
+ Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ Keep J ints in memory in canonical form, NReq=859713.
+ Overlap will be assumed to be unity.
+ Requested convergence on RMS density matrix=1.00D-08 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ SCF Done:  E(UAM1) = -0.475304684503E-01 A.U. after   11 cycles
+            NFock= 10  Conv=0.99D-08     -V/T= 0.9990
+ <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ <L.S>= 0.000000000000E+00
+ Annihilation of the first spin contaminant:
+ S**2 before annihilation     0.7513,   after     0.7500
+ QCSCF skips out because SCF is already converged.
+ Calling FoFJK, ICntrl=      2127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 1 NMat=1 NMatS=1 NMatT=0.
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6           0.029483583    0.027472855    0.000104295
+      2        1           0.000098351    0.015620269   -0.000023000
+      3        1           0.016198380   -0.000955273   -0.000059900
+      4        8          -0.029167371   -0.044964337   -0.000031190
+      5        8          -0.005947831    0.002559199   -0.000009026
+      6        1          -0.010665113    0.000267288    0.000018820
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.044964337 RMS     0.016930623
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     6    Step Number     3
+
+ Summary information for step      3
+ Time (fs)     0.025000
+ EKin =       0.0237867; EPot =      -0.0475305; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.2207421194D-14  JY =  0.1097095529D-13  JZ = -0.1346380636D-13
+ Jtot =  0.1750738844D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02  Delta-E  -2.139097D-09 A.U.
+ Total angular momentum   1.750739D-14  Delta-A   6.890954D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933322717288D+00 Y=   6.269424078756D-01 Z=  -3.881111925817D-04
+ I=    2 X=   2.528912089004D+00 Y=   2.650509813864D+00 Z=   3.263515598309D-03
+ I=    3 X=   4.917801773064D+00 Y=   6.685629056860D-02 Z=  -2.562474404661D-03
+ I=    4 X=   1.266118823777D+00 Y=  -9.250455727584D-01 Z=   4.762062027404D-04
+ I=    5 X=  -3.802753787677D+00 Y=   3.020872688542D-01 Z=  -3.920924105633D-04
+ I=    6 X=  -2.115047237715D+00 Y=  -2.954615961007D-01 Z=   2.585185347140D-03
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   2.155874239809D+13 Y=  -3.745307522628D+13 Z=  -3.306877586514D+13
+ I=    2 X=   4.173577867978D+13 Y=   8.762754399391D+13 Z=   6.147098439331D+13
+ I=    3 X=   6.370932881168D+13 Y=  -1.208536637778D+13 Z=  -1.056606341333D+12
+ I=    4 X=  -1.982266791670D+13 Y=   2.099038669398D+13 Z=   1.362971709386D+13
+ I=    5 X=  -4.693914777589D+13 Y=  -2.980351442504D+13 Z=  -1.704960698580D+13
+ I=    6 X=   8.612995865834D+13 Y=   8.880423362433D+13 Z=   6.731782653628D+13
+
+
+ Final analysis for traj   6
+ Traj calculation does not meet the product criterion.
+
+
+ Analysis of fragment    1
+
+ Instantaneous rotational analysis:
+ Q(CM): X=  0.132244457573D-15 Y=  0.224343276240D-16 Z=  0.368985651710D-19
+ V(CM): X=  0.295188521368D-03 Y= -0.147594260684D-02 Z= -0.590377042736D-03
+ Angular momentum in principle axes
+   JX =  0.9790737972D-14  JY =  0.0000000000D+00  JZ =  0.7649014040D-15
+ Jtot =  0.9820571480D-14  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Angular momentum in original axes
+   JX =  0.9592107263D-15  JY =  0.9773614327D-14  JZ = -0.1395869495D-17
+ Jtot =  0.9820571480D-14  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+
+ Etrn =  0.4011999105D-34 Erot =  0.7242013749D-34 Evib(kin) =  0.2378671058D-01 au
+ Epot = -0.4753046845D-01 Etot = -0.2374375787D-01 au
+
+ Trajectory summary for trajectory      6
+ Energy/gradient evaluations            1
+ Hessian evaluations                    0
+
+ Trajectory summary
+   Time (fs)   Kinetic (au)   Potent (au)   Delta E (au)     Delta A (h-bar)
+     0.000000     0.0237510    -0.0474948     0.0000000     0.0000000000000000
+     0.025000     0.0237867    -0.0475305    -0.0000000     0.0000000000000069
+                             Max Error =     -0.0000000     0.0000000000000069
+ Trajectory      6 has not met product criteria!
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+          ******** Start new trajectory calculation ********
+ Trajectory Number     7    Step Number     1
+ Get start point for trajectory     7
+
+ Start point information 
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.1526209037D-15  JY =  0.8980863029D-18  JZ = -0.1468611067D-13
+ Jtot =  0.1468690371D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   1.468690D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   4.442320787550D+13 Y=   3.329559376797D+13 Z=  -2.779441304588D+13
+ I=    2 X=   9.150792478349D+13 Y=   7.077491126618D+13 Z=   4.799775998158D+13
+ I=    3 X=  -2.270633626500D+13 Y=   4.141981295718D+12 Z=   6.365597364499D+12
+ I=    4 X=  -8.648161222276D+13 Y=  -3.598223284473D+13 Z=   9.692928455620D+12
+ I=    5 X=   9.211794280570D+12 Y=  -2.802573271392D+13 Z=  -1.282760087794D+13
+ I=    6 X=   8.573859200501D+13 Y=   6.518786406754D+13 Z=   5.403273539612D+13
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     7    Step Number     2
+ Start point not scaled!
+
+ Summary information for step      2
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.1526209037D-15  JY =  0.8980863029D-18  JZ = -0.1468611067D-13
+ Jtot =  0.1468690371D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   1.468690D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   4.442320787550D+13 Y=   3.329559376797D+13 Z=  -2.779441304588D+13
+ I=    2 X=   9.150792478349D+13 Y=   7.077491126618D+13 Z=   4.799775998158D+13
+ I=    3 X=  -2.270633626500D+13 Y=   4.141981295718D+12 Z=   6.365597364499D+12
+ I=    4 X=  -8.648161222276D+13 Y=  -3.598223284473D+13 Z=   9.692928455620D+12
+ I=    5 X=   9.211794280570D+12 Y=  -2.802573271392D+13 Z=  -1.282760087794D+13
+ I=    6 X=   8.573859200501D+13 Y=   6.518786406754D+13 Z=   5.403273539612D+13
+
+ Predicted information for step      3
+ Time (fs)     0.025000
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933489158234D+00 Y=   6.274543185989D-01 Z=  -3.500444225288D-04
+ I=    2 X=   2.530151582081D+00 Y=   2.650099470549D+00 Z=   2.927991679187D-03
+ I=    3 X=   4.915659363409D+00 Y=   6.725981264808D-02 Z=  -2.377663335564D-03
+ I=    4 X=   1.265701067670D+00 Y=  -9.254033576781D-01 Z=   4.515969917966D-04
+ I=    5 X=  -3.802403018147D+00 Y=   3.020984798424D-01 Z=  -3.657009246110D-04
+ I=    6 X=  -2.115062979379D+00 Y=  -2.960496283437D-01 Z=   2.254357692175D-03
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.552336    0.332035   -0.000185
+      2          1           0        1.338899    1.402372    0.001549
+      3          1           0        2.601255    0.035592   -0.001258
+      4          8           0        0.669780   -0.489702    0.000239
+      5          8           0       -2.012145    0.159864   -0.000194
+      6          1           0       -1.119243   -0.156663    0.001193
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.091412   0.000000
+     3  H    1.090005   1.860548   0.000000
+     4  O    1.205884   2.006905   2.001632   0.000000
+     5  O    3.568636   3.573979   4.615074   2.759467   0.000000
+     6  H    2.715909   2.910851   3.725463   1.819758   0.947346
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):          67.0705747           4.5619832           4.2714498
+ Standard basis: VSTO-6G (5D, 7F)
+    15 basis functions,    90 primitive gaussians,    15 cartesian basis functions
+    10 alpha electrons        9 beta electrons
+       nuclear repulsion energy        60.6987951306 Hartrees.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+ Do NDO integrals.
+ One-electron integrals computed using PRISM.
+ NBasis=    15 RedAO= F EigKep=  0.00D+00  NBF=    15
+ NBsUse=    15 1.00D-04 EigRej=  0.00D+00 NBFU=    15
+ Initial guess from the checkpoint file:  "BOMD-Complex_gr.chk"
+ B after Tr=    -0.000018   -0.000012   -0.000009
+         Rot=    1.000000    0.000011    0.000001    0.000001 Ang=   0.00 deg.
+ Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ Keep J ints in memory in canonical form, NReq=859713.
+ Overlap will be assumed to be unity.
+ Requested convergence on RMS density matrix=1.00D-08 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ SCF Done:  E(UAM1) = -0.475325163149E-01 A.U. after   16 cycles
+            NFock= 15  Conv=0.80D-08     -V/T= 0.9990
+ <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ <L.S>= 0.000000000000E+00
+ Annihilation of the first spin contaminant:
+ S**2 before annihilation     0.7513,   after     0.7500
+ QCSCF skips out because SCF is already converged.
+ Calling FoFJK, ICntrl=      2127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 1 NMat=1 NMatS=1 NMatT=0.
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6           0.028076542    0.026488408    0.000091039
+      2        1          -0.000070432    0.015965617   -0.000019081
+      3        1           0.016996679   -0.001171933   -0.000054182
+      4        8          -0.028374587   -0.044112566   -0.000026272
+      5        8          -0.006018293    0.002586286   -0.000008155
+      6        1          -0.010609909    0.000244188    0.000016650
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.044112566 RMS     0.016569184
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     7    Step Number     3
+
+ Summary information for step      3
+ Time (fs)     0.025000
+ EKin =       0.0237888; EPot =      -0.0475325; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.4025229484D-15  JY = -0.4890310635D-14  JZ = -0.1346156223D-13
+ Jtot =  0.1432797336D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02  Delta-E  -8.106003D-10 A.U.
+ Total angular momentum   1.432797D-14  Delta-A  -3.589304D-16 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933489158234D+00 Y=   6.274543185989D-01 Z=  -3.500444225288D-04
+ I=    2 X=   2.530151582081D+00 Y=   2.650099470549D+00 Z=   2.927991679187D-03
+ I=    3 X=   4.915659363409D+00 Y=   6.725981264808D-02 Z=  -2.377663335564D-03
+ I=    4 X=   1.265701067670D+00 Y=  -9.254033576781D-01 Z=   4.515969917966D-04
+ I=    5 X=  -3.802403018147D+00 Y=   3.020984798424D-01 Z=  -3.657009246110D-04
+ I=    6 X=  -2.115062979379D+00 Y=  -2.960496283437D-01 Z=   2.254357692175D-03
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   4.461671609625D+13 Y=   3.347602472207D+13 Z=  -2.779413432399D+13
+ I=    2 X=   9.150713492794D+13 Y=   7.115374916469D+13 Z=   4.799766617610D+13
+ I=    3 X=  -2.231237322272D+13 Y=   4.116015917009D+12 Z=   6.364769824173D+12
+ I=    4 X=  -8.665069884073D+13 Y=  -3.624360636427D+13 Z=   9.692883503441D+12
+ I=    5 X=   9.174850953127D+12 Y=  -2.800996202304D+13 Z=  -1.282763778213D+13
+ I=    6 X=   8.549847780327D+13 Y=   6.519082607186D+13 Z=   5.403302107663D+13
+
+
+ Final analysis for traj   7
+ Traj calculation does not meet the product criterion.
+
+
+ Analysis of fragment    1
+
+ Instantaneous rotational analysis:
+ Q(CM): X= -0.179474620992D-15 Y=  0.118075408547D-17 Z=  0.184492825855D-19
+ V(CM): X=  0.295188521368D-03 Y= -0.206631964958D-02 Z=  0.295188521368D-03
+ Angular momentum in principle axes
+   JX = -0.4895368986D-14  JY = -0.2080531819D-13  JZ = -0.3059605616D-15
+ Jtot =  0.2137567576D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Angular momentum in original axes
+   JX = -0.4023580365D-15  JY = -0.4891379239D-14  JZ = -0.2080461563D-13
+ Jtot =  0.2137567576D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+
+ Etrn =  0.8665918067D-34 Erot =  0.2985781783D-33 Evib(kin) =  0.2378875977D-01 au
+ Epot = -0.4753251631D-01 Etot = -0.2374375655D-01 au
+
+ Trajectory summary for trajectory      7
+ Energy/gradient evaluations            1
+ Hessian evaluations                    0
+
+ Trajectory summary
+   Time (fs)   Kinetic (au)   Potent (au)   Delta E (au)     Delta A (h-bar)
+     0.000000     0.0237510    -0.0474948     0.0000000     0.0000000000000000
+     0.025000     0.0237888    -0.0475325    -0.0000000    -0.0000000000000004
+                             Max Error =     -0.0000000    -0.0000000000000004
+ Trajectory      7 has not met product criteria!
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+          ******** Start new trajectory calculation ********
+ Trajectory Number     8    Step Number     1
+ Get start point for trajectory     8
+
+ Start point information 
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.1174708235D-14  JY =  0.2470107484D-14  JZ = -0.9791125003D-14
+ Jtot =  0.1016599721D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   1.016600D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   6.663599926650D+13 Y=  -1.849336456558D+13 Z=   9.981414784006D+12
+ I=    2 X=   6.544688968183D+13 Y=   4.053231048622D+12 Z=  -3.434667092118D+13
+ I=    3 X=   6.614535828983D+13 Y=   2.475305443874D+13 Z=   4.266050823895D+13
+ I=    4 X=  -6.108182621411D+13 Y=   2.452760205713D+13 Z=  -2.526567296191D+13
+ I=    5 X=  -3.239806917313D+13 Y=  -4.522273520365D+13 Z=  -3.867604471414D+12
+ I=    6 X=   1.087770368803D+13 Y=   1.174528583273D+14 Z=   7.330540220732D+13
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     8    Step Number     2
+ Start point not scaled!
+
+ Summary information for step      2
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.1174708235D-14  JY =  0.2470107484D-14  JZ = -0.9791125003D-14
+ Jtot =  0.1016599721D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   1.016600D-14 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   6.663599926650D+13 Y=  -1.849336456558D+13 Z=   9.981414784006D+12
+ I=    2 X=   6.544688968183D+13 Y=   4.053231048622D+12 Z=  -3.434667092118D+13
+ I=    3 X=   6.614535828983D+13 Y=   2.475305443874D+13 Z=   4.266050823895D+13
+ I=    4 X=  -6.108182621411D+13 Y=   2.452760205713D+13 Z=  -2.526567296191D+13
+ I=    5 X=  -3.239806917313D+13 Y=  -4.522273520365D+13 Z=  -3.867604471414D+12
+ I=    6 X=   1.087770368803D+13 Y=   1.174528583273D+14 Z=   7.330540220732D+13
+
+ Predicted information for step      3
+ Time (fs)     0.025000
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933649465248D+00 Y=   6.270805639860D-01 Z=  -7.742086794830D-05
+ I=    2 X=   2.529502590447D+00 Y=   2.648437916736D+00 Z=   8.773882962845D-04
+ I=    3 X=   4.917872015600D+00 Y=   6.777308520153D-02 Z=  -1.473819976574D-03
+ I=    4 X=   1.265859841567D+00 Y=  -9.250251110952D-01 Z=   2.330710025733D-04
+ I=    5 X=  -3.802663121131D+00 Y=   3.019909814921D-01 Z=  -3.096920455719D-04
+ I=    6 X=  -2.116927221916D+00 Y=  -2.947480858732D-01 Z=   2.734300237498D-03
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.552420    0.331837   -0.000041
+      2          1           0        1.338555    1.401493    0.000464
+      3          1           0        2.602426    0.035864   -0.000780
+      4          8           0        0.669864   -0.489502    0.000123
+      5          8           0       -2.012283    0.159807   -0.000164
+      6          1           0       -1.120230   -0.155974    0.001447
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.090827   0.000000
+     3  H    1.090922   1.860729   0.000000
+     4  O    1.205613   2.005744   2.002699   0.000000
+     5  O    3.568852   3.573500   4.616373   2.759622   0.000000
+     6  H    2.716803   2.910554   3.727596   1.820901   0.946297
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):          67.1396470           4.5611054           4.2709597
+ Standard basis: VSTO-6G (5D, 7F)
+    15 basis functions,    90 primitive gaussians,    15 cartesian basis functions
+    10 alpha electrons        9 beta electrons
+       nuclear repulsion energy        60.7001572750 Hartrees.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+ Do NDO integrals.
+ One-electron integrals computed using PRISM.
+ NBasis=    15 RedAO= F EigKep=  0.00D+00  NBF=    15
+ NBsUse=    15 1.00D-04 EigRej=  0.00D+00 NBFU=    15
+ Initial guess from the checkpoint file:  "BOMD-Complex_gr.chk"
+ B after Tr=    -0.000006    0.000004   -0.000005
+         Rot=    1.000000    0.000080   -0.000002    0.000004 Ang=   0.01 deg.
+ Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ Keep J ints in memory in canonical form, NReq=859713.
+ Overlap will be assumed to be unity.
+ Requested convergence on RMS density matrix=1.00D-08 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ SCF Done:  E(UAM1) = -0.475356970841E-01 A.U. after   21 cycles
+            NFock= 20  Conv=0.54D-09     -V/T= 0.9990
+ <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ <L.S>= 0.000000000000E+00
+ Annihilation of the first spin contaminant:
+ S**2 before annihilation     0.7513,   after     0.7500
+ QCSCF skips out because SCF is already converged.
+ Calling FoFJK, ICntrl=      2127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 1 NMat=1 NMatS=1 NMatT=0.
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6           0.029036803    0.026458861   -0.000013842
+      2        1          -0.000050512    0.016448551    0.000008852
+      3        1           0.016328415   -0.001082996   -0.000007937
+      4        8          -0.028758184   -0.044641679    0.000002731
+      5        8          -0.006871036    0.002885685   -0.000010624
+      6        1          -0.009685485   -0.000068424    0.000020819
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.044641679 RMS     0.016751152
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     8    Step Number     3
+
+ Summary information for step      3
+ Time (fs)     0.025000
+ EKin =       0.0237919; EPot =      -0.0475357; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.3783675660D-15  JY = -0.3666525894D-14  JZ = -0.1223789732D-13
+ Jtot =  0.1278095086D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02  Delta-E  -1.212845D-09 A.U.
+ Total angular momentum   1.278095D-14  Delta-A   2.614954D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933649465248D+00 Y=   6.270805639860D-01 Z=  -7.742086794830D-05
+ I=    2 X=   2.529502590447D+00 Y=   2.648437916736D+00 Z=   8.773882962845D-04
+ I=    3 X=   4.917872015600D+00 Y=   6.777308520153D-02 Z=  -1.473819976574D-03
+ I=    4 X=   1.265859841567D+00 Y=  -9.250251110952D-01 Z=   2.330710025733D-04
+ I=    5 X=  -3.802663121131D+00 Y=   3.019909814921D-01 Z=  -3.096920455719D-04
+ I=    6 X=  -2.116927221916D+00 Y=  -2.947480858732D-01 Z=   2.734300237498D-03
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   6.683275625266D+13 Y=  -1.831303357352D+13 Z=   9.981338672737D+12
+ I=    2 X=   6.544633237171D+13 Y=   4.437706823709D+12 Z=  -3.434643854187D+13
+ I=    3 X=   6.653151988055D+13 Y=   2.472812732646D+13 Z=   4.266022055495D+13
+ I=    4 X=  -6.125203693121D+13 Y=   2.426467801828D+13 Z=  -2.526563293596D+13
+ I=    5 X=  -3.243751138926D+13 Y=  -4.520608714933D+13 Z=  -3.867648609958D+12
+ I=    6 X=   1.064838140145D+13 Y=   1.174521708441D+14 Z=   7.330573652743D+13
+
+
+ Final analysis for traj   8
+ Traj calculation does not meet the product criterion.
+
+
+ Analysis of fragment    1
+
+ Instantaneous rotational analysis:
+ Q(CM): X= -0.198366686359D-15 Y= -0.224343276240D-16 Z= -0.184492825855D-19
+ V(CM): X=  0.848666998934D-03 Y=  0.000000000000D+00 Z= -0.590377042736D-03
+ Angular momentum in principle axes
+   JX = -0.2447684493D-14  JY = -0.1468610696D-13  JZ = -0.3059605616D-15
+ Jtot =  0.1489182691D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Angular momentum in original axes
+   JX = -0.3540655906D-15  JY = -0.2443280205D-14  JZ = -0.1468575937D-13
+ Jtot =  0.1489182691D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+
+ Etrn =  0.5037566376D-34 Erot =  0.1451102196D-33 Evib(kin) =  0.2379194014D-01 au
+ Epot = -0.4753569708D-01 Etot = -0.2374375695D-01 au
+
+ Trajectory summary for trajectory      8
+ Energy/gradient evaluations            1
+ Hessian evaluations                    0
+
+ Trajectory summary
+   Time (fs)   Kinetic (au)   Potent (au)   Delta E (au)     Delta A (h-bar)
+     0.000000     0.0237510    -0.0474948     0.0000000     0.0000000000000000
+     0.025000     0.0237919    -0.0475357    -0.0000000     0.0000000000000026
+                             Max Error =     -0.0000000     0.0000000000000026
+ Trajectory      8 has not met product criteria!
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+          ******** Start new trajectory calculation ********
+ Trajectory Number     9    Step Number     1
+ Get start point for trajectory     9
+
+ Start point information 
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.4147153724D-16  JY =  0.1509388832D-15  JZ = -0.8566916924D-14
+ Jtot =  0.8568346866D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   8.568347D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   4.038140274097D+12 Y=  -2.446610660650D+13 Z=  -8.591137643144D+12
+ I=    2 X=  -8.993853013652D+12 Y=   5.427401236706D+13 Z=   8.570372116611D+12
+ I=    3 X=   8.416566944509D+13 Y=   5.043900032469D+13 Z=   1.412603206927D+13
+ I=    4 X=  -9.016640571526D+13 Y=  -2.040371367834D+12 Z=   3.288694182367D+11
+ I=    5 X=   4.330268561877D+13 Y=  -2.874739908791D+13 Z=  -8.620938137291D+11
+ I=    6 X=   9.759012633766D+13 Y=   1.023629662949D+14 Z=   9.072673307095D+12
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     9    Step Number     2
+ Start point not scaled!
+
+ Summary information for step      2
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.4147153724D-16  JY =  0.1509388832D-15  JZ = -0.8566916924D-14
+ Jtot =  0.8568346866D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   8.568347D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   4.038140274097D+12 Y=  -2.446610660650D+13 Z=  -8.591137643144D+12
+ I=    2 X=  -8.993853013652D+12 Y=   5.427401236706D+13 Z=   8.570372116611D+12
+ I=    3 X=   8.416566944509D+13 Y=   5.043900032469D+13 Z=   1.412603206927D+13
+ I=    4 X=  -9.016640571526D+13 Y=  -2.040371367834D+12 Z=   3.288694182367D+11
+ I=    5 X=   4.330268561877D+13 Y=  -2.874739908791D+13 Z=  -8.620938137291D+11
+ I=    6 X=   9.759012633766D+13 Y=   1.023629662949D+14 Z=   9.072673307095D+12
+
+ Predicted information for step      3
+ Time (fs)     0.025000
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933197704114D+00 Y=   6.270374594332D-01 Z=  -2.114567197402D-04
+ I=    2 X=   2.527648810694D+00 Y=   2.649688552667D+00 Z=   1.946141005759D-03
+ I=    3 X=   4.918320771036D+00 Y=   6.841273607955D-02 Z=  -2.184407113086D-03
+ I=    4 X=   1.265678034050D+00 Y=  -9.251911873236D-01 Z=   3.930623198899D-04
+ I=    5 X=  -3.802189916207D+00 Y=   3.020939687106D-01 Z=  -2.909046180730D-04
+ I=    6 X=  -2.114767843495D+00 Y=  -2.951238657931D-01 Z=   1.134728174981D-03
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.552181    0.331814   -0.000112
+      2          1           0        1.337574    1.402155    0.001030
+      3          1           0        2.602663    0.036202   -0.001156
+      4          8           0        0.669768   -0.489590    0.000208
+      5          8           0       -2.012032    0.159861   -0.000154
+      6          1           0       -1.119087   -0.156173    0.000600
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.091644   0.000000
+     3  H    1.091283   1.861795   0.000000
+     4  O    1.205553   2.006157   2.003134   0.000000
+     5  O    3.568359   3.572556   4.616352   2.759319   0.000000
+     6  H    2.715475   2.909221   3.726719   1.819662   0.947222
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):          67.1099689           4.5623803           4.2719573
+ Standard basis: VSTO-6G (5D, 7F)
+    15 basis functions,    90 primitive gaussians,    15 cartesian basis functions
+    10 alpha electrons        9 beta electrons
+       nuclear repulsion energy        60.6995799200 Hartrees.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+ Do NDO integrals.
+ One-electron integrals computed using PRISM.
+ NBasis=    15 RedAO= F EigKep=  0.00D+00  NBF=    15
+ NBsUse=    15 1.00D-04 EigRej=  0.00D+00 NBFU=    15
+ Initial guess from the checkpoint file:  "BOMD-Complex_gr.chk"
+ B after Tr=     0.000016    0.000027   -0.000030
+         Rot=    1.000000   -0.000048    0.000003   -0.000013 Ang=  -0.01 deg.
+ Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ Keep J ints in memory in canonical form, NReq=859713.
+ Overlap will be assumed to be unity.
+ Requested convergence on RMS density matrix=1.00D-08 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ SCF Done:  E(UAM1) = -0.475361795167E-01 A.U. after   17 cycles
+            NFock= 16  Conv=0.28D-08     -V/T= 0.9990
+ <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ <L.S>= 0.000000000000E+00
+ Annihilation of the first spin contaminant:
+ S**2 before annihilation     0.7513,   after     0.7500
+ QCSCF skips out because SCF is already converged.
+ Calling FoFJK, ICntrl=      2127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 1 NMat=1 NMatS=1 NMatT=0.
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6           0.029200899    0.027007766    0.000028966
+      2        1           0.000081577    0.015896679   -0.000002172
+      3        1           0.016038486   -0.001007343   -0.000028020
+      4        8          -0.028677610   -0.044732349   -0.000002971
+      5        8          -0.006122236    0.002620568   -0.000004972
+      6        1          -0.010521116    0.000214678    0.000009169
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.044732349 RMS     0.016785493
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number     9    Step Number     3
+
+ Summary information for step      3
+ Time (fs)     0.025000
+ EKin =       0.0237924; EPot =      -0.0475362; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX =  0.7819885064D-15  JY = -0.1088191403D-14  JZ = -0.1101440423D-13
+ Jtot =  0.1109561927D-13 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02  Delta-E  -2.145665D-09 A.U.
+ Total angular momentum   1.109562D-14  Delta-A   2.527272D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933197704114D+00 Y=   6.270374594332D-01 Z=  -2.114567197402D-04
+ I=    2 X=   2.527648810694D+00 Y=   2.649688552667D+00 Z=   1.946141005759D-03
+ I=    3 X=   4.918320771036D+00 Y=   6.841273607955D-02 Z=  -2.184407113086D-03
+ I=    4 X=   1.265678034050D+00 Y=  -9.251911873236D-01 Z=   3.930623198899D-04
+ I=    5 X=  -3.802189916207D+00 Y=   3.020939687106D-01 Z=  -2.909046180730D-04
+ I=    6 X=  -2.114767843495D+00 Y=  -2.951238657931D-01 Z=   1.134728174981D-03
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   4.235452430304D+12 Y=  -2.428391855305D+13 Z=  -8.591068916794D+12
+ I=    2 X=  -8.992868286273D+12 Y=   5.465204547440D+13 Z=   8.570476339195D+12
+ I=    3 X=   8.454844635137D+13 Y=   5.041495640403D+13 Z=   1.412550981064D+13
+ I=    4 X=  -9.033638031468D+13 Y=  -2.303561109356D+12 Z=   3.288926491577D+11
+ I=    5 X=   4.326543769570D+13 Y=  -2.873152793575D+13 Z=  -8.621213832617D+11
+ I=    6 X=   9.735104872350D+13 Y=   1.023655837984D+14 Z=   9.072871478312D+12
+
+
+ Final analysis for traj   9
+ Traj calculation does not meet the product criterion.
+
+
+ Analysis of fragment    1
+
+ Instantaneous rotational analysis:
+ Q(CM): X= -0.377841307351D-16 Y= -0.401456389061D-16 Z=  0.230616032319D-19
+ V(CM): X= -0.295188521368D-03 Y=  0.590377042736D-03 Z=  0.737971303421D-04
+ Angular momentum in principle axes
+   JX = -0.9178816848D-15  JY = -0.1101458022D-13  JZ =  0.6692887285D-15
+ Jtot =  0.1107300463D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Angular momentum in original axes
+   JX =  0.6511923144D-15  JY = -0.9325854332D-15  JZ = -0.1101442983D-13
+ Jtot =  0.1107300463D-13  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+
+ Etrn =  0.1458612425D-33 Erot =  0.8392251353D-34 Evib(kin) =  0.2379242164D-01 au
+ Epot = -0.4753617952D-01 Etot = -0.2374375788D-01 au
+
+ Trajectory summary for trajectory      9
+ Energy/gradient evaluations            1
+ Hessian evaluations                    0
+
+ Trajectory summary
+   Time (fs)   Kinetic (au)   Potent (au)   Delta E (au)     Delta A (h-bar)
+     0.000000     0.0237510    -0.0474948     0.0000000     0.0000000000000000
+     0.025000     0.0237924    -0.0475362    -0.0000000     0.0000000000000025
+                             Max Error =     -0.0000000     0.0000000000000025
+ Trajectory      9 has not met product criteria!
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+          ******** Start new trajectory calculation ********
+ Trajectory Number    10    Step Number     1
+ Get start point for trajectory    10
+
+ Start point information 
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.6430275121D-15  JY =  0.6132943411D-14  JZ = -0.1836673118D-14
+ Jtot =  0.6434271319D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   6.434271D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   3.432123948173D+13 Y=  -4.094739863610D+13 Z=  -1.798204712109D+13
+ I=    2 X=   3.737872696095D+12 Y=   6.233291350030D+13 Z=  -1.414423101924D+13
+ I=    3 X=  -1.838319052383D+13 Y=   2.483219546111D+13 Z=   1.027076055659D+14
+ I=    4 X=  -7.326042928525D+13 Y=   3.478762749954D+13 Z=  -2.632031408115D+13
+ I=    5 X=   2.169098739041D+13 Y=  -1.926084506971D+13 Z=  -1.704998788660D+12
+ I=    6 X=   1.016582641657D+14 Y=  -7.726617157362D+12 Z=   8.513343145679D+13
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+ 
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number    10    Step Number     2
+ Start point not scaled!
+
+ Summary information for step      2
+ Time (fs)     0.000000
+ EKin =       0.0237510; EPot =      -0.0474948; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.6430275121D-15  JY =  0.6132943411D-14  JZ = -0.1836673118D-14
+ Jtot =  0.6434271319D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374376D-02 A.U.
+ Total angular momentum   6.434271D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933167850344D+00 Y=   6.272133729472D-01 Z=  -1.494553129627D-04
+ I=    2 X=   2.527872781627D+00 Y=   2.648332187519D+00 Z=   1.732711907104D-03
+ I=    3 X=   4.916219944297D+00 Y=   6.715697179839D-02 Z=  -2.536179408288D-03
+ I=    4 X=   1.266242200857D+00 Y=  -9.251776071848D-01 Z=   3.910063586629D-04
+ I=    5 X=  -3.802460480323D+00 Y=   3.022736173077D-01 Z=  -2.855155939314D-04
+ I=    6 X=  -2.117195211737D+00 Y=  -2.976729886775D-01 Z=   9.087913167937D-04
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   3.432123948173D+13 Y=  -4.094739863610D+13 Z=  -1.798204712109D+13
+ I=    2 X=   3.737872696095D+12 Y=   6.233291350030D+13 Z=  -1.414423101924D+13
+ I=    3 X=  -1.838319052383D+13 Y=   2.483219546111D+13 Z=   1.027076055659D+14
+ I=    4 X=  -7.326042928525D+13 Y=   3.478762749954D+13 Z=  -2.632031408115D+13
+ I=    5 X=   2.169098739041D+13 Y=  -1.926084506971D+13 Z=  -1.704998788660D+12
+ I=    6 X=   1.016582641657D+14 Y=  -7.726617157362D+12 Z=   8.513343145679D+13
+
+ Predicted information for step      3
+ Time (fs)     0.025000
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933416253557D+00 Y=   6.269185159533D-01 Z=  -2.792297711781D-04
+ I=    2 X=   2.527965865770D+00 Y=   2.649889241527D+00 Z=   1.380484755287D-03
+ I=    3 X=   4.915767021659D+00 Y=   6.777505603121D-02 Z=   2.151831846540D-05
+ I=    4 X=   1.265783713198D+00 Y=  -9.249609757431D-01 Z=   2.264784478225D-04
+ I=    5 X=  -3.802325010792D+00 Y=   3.021532690978D-01 Z=  -2.961736115682D-04
+ I=    6 X=  -2.114666535646D+00 Y=  -2.978653999779D-01 Z=   3.028850779971D-03
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ 
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.552297    0.331751   -0.000148
+      2          1           0        1.337742    1.402261    0.000731
+      3          1           0        2.601312    0.035865    0.000011
+      4          8           0        0.669824   -0.489468    0.000120
+      5          8           0       -2.012104    0.159893   -0.000157
+      6          1           0       -1.119033   -0.157624    0.001603
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.091800   0.000000
+     3  H    1.089945   1.861088   0.000000
+     4  O    1.205471   2.006179   2.001655   0.000000
+     5  O    3.568541   3.572806   4.615083   2.759421   0.000000
+     6  H    2.715787   2.910152   3.725374   1.819377   0.947837
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):          67.1234336           4.5622424           4.2718910
+ Standard basis: VSTO-6G (5D, 7F)
+    15 basis functions,    90 primitive gaussians,    15 cartesian basis functions
+    10 alpha electrons        9 beta electrons
+       nuclear repulsion energy        60.7008859032 Hartrees.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+ Do NDO integrals.
+ One-electron integrals computed using PRISM.
+ NBasis=    15 RedAO= F EigKep=  0.00D+00  NBF=    15
+ NBsUse=    15 1.00D-04 EigRej=  0.00D+00 NBFU=    15
+ Initial guess from the checkpoint file:  "BOMD-Complex_gr.chk"
+ B after Tr=    -0.000042   -0.000064    0.000072
+         Rot=    1.000000    0.000030    0.000006   -0.000003 Ang=   0.00 deg.
+ Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ Keep J ints in memory in canonical form, NReq=859713.
+ Overlap will be assumed to be unity.
+ Requested convergence on RMS density matrix=1.00D-08 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ SCF Done:  E(UAM1) = -0.474865807466E-01 A.U. after   17 cycles
+            NFock= 16  Conv=0.82D-08     -V/T= 0.9990
+ <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7513 S= 0.5006
+ <L.S>= 0.000000000000E+00
+ Annihilation of the first spin contaminant:
+ S**2 before annihilation     0.7513,   after     0.7500
+ QCSCF skips out because SCF is already converged.
+ Calling FoFJK, ICntrl=      2127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 1 NMat=1 NMatS=1 NMatT=0.
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6           0.028557404    0.027424691    0.000116818
+      2        1           0.000093643    0.015821975   -0.000036831
+      3        1           0.017011412   -0.001174584   -0.000047206
+      4        8          -0.029005620   -0.044901011   -0.000043686
+      5        8          -0.005613035    0.002445613   -0.000008861
+      6        1          -0.011043804    0.000383316    0.000019766
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.044901011 RMS     0.016875025
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+ Trajectory Number    10    Step Number     3
+
+ Summary information for step      3
+ Time (fs)     0.025000
+ EKin =       0.0237428; EPot =      -0.0474866; ETot =      -0.0237438 A.U.
+ Angular momentum (instantaneous)
+   JX = -0.9978453373D-15  JY =  0.3692272089D-14  JZ =  0.1529242324D-14
+ Jtot =  0.4119120122D-14 H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Total energy  -2.374375D-02  Delta-E   1.787145D-09 A.U.
+ Total angular momentum   4.119120D-15  Delta-A  -2.315151D-15 h-bar
+ Cartesian coordinates: (bohr)
+ I=    1 X=   2.933416253557D+00 Y=   6.269185159533D-01 Z=  -2.792297711781D-04
+ I=    2 X=   2.527965865770D+00 Y=   2.649889241527D+00 Z=   1.380484755287D-03
+ I=    3 X=   4.915767021659D+00 Y=   6.777505603121D-02 Z=   2.151831846540D-05
+ I=    4 X=   1.265783713198D+00 Y=  -9.249609757431D-01 Z=   2.264784478225D-04
+ I=    5 X=  -3.802325010792D+00 Y=   3.021532690978D-01 Z=  -2.961736115682D-04
+ I=    6 X=  -2.114666535646D+00 Y=  -2.978653999779D-01 Z=   3.028850779971D-03
+ MW cartesian velocity: (sqrt(amu)*bohr/sec)
+ I=    1 X=   3.451637455787D+13 Y=  -4.076380004021D+13 Z=  -1.798168118406D+13
+ I=    2 X=   3.738998283367D+12 Y=   6.271007449316D+13 Z=  -1.414453192592D+13
+ I=    3 X=  -1.798905548558D+13 Y=   2.480619913347D+13 Z=   1.027068594420D+14
+ I=    4 X=  -7.343136509092D+13 Y=   3.452394351105D+13 Z=  -2.632041007944D+13
+ I=    5 X=   2.165523163729D+13 Y=  -1.924548660770D+13 Z=  -1.705037762140D+12
+ I=    6 X=   1.014130845942D+14 Y=  -7.722030944461D+12 Z=   8.513375347665D+13
+
+
+ Final analysis for traj  10
+ Traj calculation does not meet the product criterion.
+
+
+ Analysis of fragment    1
+
+ Instantaneous rotational analysis:
+ Q(CM): X=  0.944603268378D-17 Y=  0.389648848206D-16 Z=  0.000000000000D+00
+ V(CM): X=  0.147594260684D-02 Y= -0.123610193323D-02 Z= -0.118075408547D-02
+ Angular momentum in principle axes
+   JX =  0.4895368986D-14  JY =  0.1529802808D-14  JZ = -0.9178816848D-15
+ Jtot =  0.5210320616D-14  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+ Angular momentum in original axes
+   JX = -0.8206151037D-15  JY =  0.4912838443D-14  JZ =  0.1529068414D-14
+ Jtot =  0.5210320616D-14  H-BAR;  J (Quantum Number) =  0.0000000000D+00
+
+ Etrn =  0.1293869711D-34 Erot =  0.2673105989D-34 Evib(kin) =  0.2374282680D-01 au
+ Epot = -0.4748658075D-01 Etot = -0.2374375395D-01 au
+
+ Trajectory summary for trajectory     10
+ Energy/gradient evaluations            1
+ Hessian evaluations                    0
+
+ Trajectory summary
+   Time (fs)   Kinetic (au)   Potent (au)   Delta E (au)     Delta A (h-bar)
+     0.000000     0.0237510    -0.0474948     0.0000000     0.0000000000000000
+     0.025000     0.0237428    -0.0474866     0.0000000    -0.0000000000000023
+                             Max Error =      0.0000000    -0.0000000000000023
+ Trajectory     10 has not met product criteria!
+
+
+ -----------------------
+ Summary of trajectories
+ -----------------------
+
+ Trajectory      1 did not finish in      2 cycles.
+   Total time in trajectory      0.025 femtosec.
+ Trajectory      2 did not finish in      2 cycles.
+   Total time in trajectory      0.025 femtosec.
+ Trajectory      3 did not finish in      2 cycles.
+   Total time in trajectory      0.025 femtosec.
+ Trajectory      4 did not finish in      2 cycles.
+   Total time in trajectory      0.025 femtosec.
+ Trajectory      5 did not finish in      2 cycles.
+   Total time in trajectory      0.025 femtosec.
+ Trajectory      6 did not finish in      2 cycles.
+   Total time in trajectory      0.025 femtosec.
+ Trajectory      7 did not finish in      2 cycles.
+   Total time in trajectory      0.025 femtosec.
+ Trajectory      8 did not finish in      2 cycles.
+   Total time in trajectory      0.025 femtosec.
+ Trajectory      9 did not finish in      2 cycles.
+   Total time in trajectory      0.025 femtosec.
+ Trajectory     10 did not finish in      2 cycles.
+   Total time in trajectory      0.025 femtosec.
+
+
+ TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ-TRJ
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        1.552297    0.331751   -0.000148
+      2          1           0        1.337742    1.402261    0.000731
+      3          1           0        2.601312    0.035865    0.000011
+      4          8           0        0.669824   -0.489468    0.000120
+      5          8           0       -2.012104    0.159893   -0.000157
+      6          1           0       -1.119033   -0.157624    0.001603
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  H    1.091800   0.000000
+     3  H    1.089945   1.861088   0.000000
+     4  O    1.205471   2.006179   2.001655   0.000000
+     5  O    3.568541   3.572806   4.615083   2.759421   0.000000
+     6  H    2.715787   2.910152   3.725374   1.819377   0.947837
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3O2(2)
+ Framework group  C1[X(CH3O2)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):          67.1234336           4.5622424           4.2718910
+
+ **********************************************************************
+
+            Population analysis using the SCF density.
+
+ **********************************************************************
+
+ Alpha  occ. eigenvalues --   -1.47812  -1.31751  -0.94175  -0.67030  -0.62984
+ Alpha  occ. eigenvalues --   -0.59039  -0.56364  -0.52680  -0.47029  -0.41271
+ Alpha virt. eigenvalues --    0.01681   0.10823   0.13709   0.18845   0.22585
+  Beta  occ. eigenvalues --   -1.47792  -1.18669  -0.94158  -0.66573  -0.62510
+  Beta  occ. eigenvalues --   -0.56863  -0.56369  -0.44018  -0.41232
+  Beta virt. eigenvalues --    0.00860   0.01678   0.10828   0.13728   0.19575
+  Beta virt. eigenvalues --    0.23531
+          Condensed to atoms (all electrons):
+               1          2          3          4          5          6
+     1  C    3.834804   0.000000   0.000000   0.000000   0.000000   0.000000
+     2  H    0.000000   0.929671   0.000000   0.000000   0.000000   0.000000
+     3  H    0.000000   0.000000   0.928327   0.000000   0.000000   0.000000
+     4  O    0.000000   0.000000   0.000000   6.292887   0.000000   0.000000
+     5  O    0.000000   0.000000   0.000000   0.000000   6.222937   0.000000
+     6  H    0.000000   0.000000   0.000000   0.000000   0.000000   0.791373
+          Atomic-Atomic Spin Densities.
+               1          2          3          4          5          6
+     1  C    0.000023   0.000000   0.000000   0.000000   0.000000   0.000000
+     2  H    0.000000   0.000051   0.000000   0.000000   0.000000   0.000000
+     3  H    0.000000   0.000000  -0.000208   0.000000   0.000000   0.000000
+     4  O    0.000000   0.000000   0.000000  -0.001007   0.000000   0.000000
+     5  O    0.000000   0.000000   0.000000   0.000000   1.031852   0.000000
+     6  H    0.000000   0.000000   0.000000   0.000000   0.000000  -0.030711
+ Mulliken charges and spin densities:
+               1          2
+     1  C    0.165196   0.000023
+     2  H    0.070329   0.000051
+     3  H    0.071673  -0.000208
+     4  O   -0.292887  -0.001007
+     5  O   -0.222937   1.031852
+     6  H    0.208627  -0.030711
+ Sum of Mulliken charges =   0.00000   1.00000
+ Mulliken charges and spin densities with hydrogens summed into heavy atoms:
+               1          2
+     1  C    0.307197  -0.000134
+     4  O   -0.292887  -0.001007
+     5  O   -0.014310   1.001141
+ Charge=              0.0000 electrons
+ Dipole moment (field-independent basis, Debye):
+    X=              3.3867    Y=              1.1228    Z=              0.0027  Tot=              3.5680
+ N-N= 6.070088590322D+01 E-N=-5.860939401246D+01  KE=-4.840416202125D+01
+ 1\1\GINC-N1\BOMD\UAM1\ZDO\C1H3O2(2)\OMABAZA\05-Jul-2024\0\\# AM1 BOMD(
+ NKE=23751,NTraj=10,GradOnly,Maxpoints=2) SCF=XQC\\BOMD starting from o
+ ptimized structure of H-bonded complex AM1 level of theory 10 trajecto
+ ries of 2 point each Random initial velocities of atoms for T=298K (=1
+ 4156 microHartree nuclear kinetic energy for 6-atom system) Default St
+ epSize\\0,2\C,0,-1.496366,-0.306552,-0.00008\H,0,-1.281893,-1.376082,0
+ .000916\H,0,-2.545752,-0.010183,-0.001343\O,0,-0.614267,0.514938,0.000
+ 206\O,0,2.067975,-0.134601,-0.000152\H,0,1.176171,0.182877,0.00048\\Ve
+ rsion=ES64L-G16RevA.03\HF=-0.0474866\S2=0.751299\S2-1=0.\S2A=0.75\RMSD
+ =8.199e-09\RMSF=1.688e-02\Dipole=1.3324482,0.4417343,0.0010641\PG=C01 
+ [X(C1H3O2)]\\@
+
+
+ CLIMB THE MOUNTAINS AND GET THEIR GOOD TIDINGS.
+ NATURE'S PEACE WILL FLOW INTO YOU AS SUNSHINE FLOWS INTO TREES.
+ THE WINDS WILL BLOW THEIR OWN FRESHNESS INTO YOU, 
+ AND CARES WILL DROP OFF LIKE AUTUMN LEAVES.
+
+                                         -- JOHN MUIR
+ Job cpu time:       0 days  0 hours  0 minutes  7.2 seconds.
+ Elapsed time:       0 days  0 hours  0 minutes  6.8 seconds.
+ File lengths (MBytes):  RWF=      6 Int=      0 D2E=      0 Chk=      2 Scr=      1
+ Normal termination of Gaussian 16 at Fri Jul  5 13:45:20 2024.
