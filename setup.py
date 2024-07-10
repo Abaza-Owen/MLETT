@@ -12,5 +12,5 @@ setup(
 	author_email='omabaza@syr.edu',
 	license='MIT License',
 	packages= find_packages(),
-	scripts = ['scripts/gt-ucli']
+	scripts = ['scripts/gt-ucli.py']
 	)
