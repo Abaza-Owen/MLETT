@@ -1,20 +1,29 @@
 from gausstrajlib import trajectory as tj
+from gausstrajlib import datafile as df
 import numpy as np
 from gausstrajlib import conversions as cv
 import traceback
+import copy 
 
-class Reader():
+
+class Reader(): #Object to handling reading of several types of computational chemistry input files. 
 
     def __init__(self):
         pass
     
     def read_xyz(self, xyzname):
+        datafile = df.Datafile(xyzname)
         coord_temp = []
         force_temp = []
         Z_temp = []
         atomicity = 0
         with open(xyzname, 'r') as datasetxyz:
             lines = datasetxyz.readlines()
+            try:
+                atomicity = int(lines[0])
+            except Exception as e:
+                print("First line should be number of atoms in system as an integer. Please ensure proper formatting of xyz file and try again.")
+                return            
             for line in lines: # Skip the first two lines (header)
                 if len(line.split()[0]) <= 2 and len(line.split()) > 1:
                     
@@ -32,13 +41,16 @@ class Reader():
                     force_temp.append([fx, fy, fz])                
     
         print(f"Success reading from file {xyzname}")
-        read_dataset = tj.Trajectory(name = xyzname, xyz = coord_temp, force = force_temp, units = cv.MSA)
-        
-        #s#elf.datasets.append(read_dataset)
-        
-        return [read_dataset]
+        read_dataset = tj.Trajectory(name = xyzname, 
+                                     xyz = coord_temp, 
+                                     force = force_temp,
+                                     sym = Z_temp, 
+                                     units = cv.MSA)
+        datafile.trajectories.append(read_dataset)
+        return datafile
 
     def read_npz(self, npzname):
+        datafile = df.Datafile(npzname)
         datasetnpz = np.load(npzname, allow_pickle=True)
         coordinates = datasetnpz['R']
 
@@ -50,16 +62,20 @@ class Reader():
                 coord_temp[1].append(atom[1])
                 coord_temp[2].append(atom[2])
         
-        read_dataset = tj.Trajectory(name = npzname, xyz = coord_temp, units = cv.SGDML)
+        read_dataset = tj.Trajectory(name = npzname, 
+                                     xyz = coord_temp, 
+                                     units = cv.SGDML)
         print(f"Success reading from file {npzname}")
-        #self.datasets.append(read_dataset)   
         
-        return [read_dataset]       
+        datafile.trajectories.append(read_dataset)
+        
+        return datafile     
         
 
     def read_log(self, filename: str):
             # function internal to class to read a specific log file stored in the current working directory specified by name
-            trajectories = []
+            datafile = df.DataFile(name = filename) 
+            # List to hold trajectories stored in file
             try:
                 with open(filename, 'r') as log:
                     
@@ -80,9 +96,11 @@ class Reader():
                     e_trig = 0
                     last_line = ''
                     for line in log:
-                        if ("Charge = " in line and "Multplicity = " in line ):
+
+                        if ("Charge = " in line and "Multplicity = " in line ): #Get system charge and Multiplicity. 
 
                             tokens = line.split
+
                             try:
                                 multiplicity = int(tokens[2])
                             except ValueError as e:
@@ -94,12 +112,12 @@ class Reader():
                                 print(e)
                                 print("Could not convert multiplicity to numeric.")
 
-                        if("Max. points for each Traj." in line): #get max cycles in a given trajectory. used to ensure that all points are written.
+                        if("Max. points for each Traj." in line): #Get max cycles in a given trajectory. used to ensure that all points are written.
 
                             tokens = line.split()
                             num_points = int(tokens[6])
 
-                        if ("Integration parameters:" in line): #handling of special case of first two gaussian trajectory steps.  
+                        if ("Integration parameters:" in line): #Indiicates start of calculation in file. Handling of special case of first two gaussian trajectory steps .  
 
                             while("Input orientation" not in line):
 
@@ -134,35 +152,32 @@ class Reader():
                             while (line[1] != '-'):
 
                                tokens = line.split()
-                               x = float(tokens[2])
-                               y = float(tokens[3])
-                               z = float(tokens[4])
-                               force_hb = [x, y, z]
-                               forces_temp.append(force_hb)
+                               fx = float(tokens[2])
+                               fy = float(tokens[3])
+                               fz = float(tokens[4])
+                               forces_temp.append([fx, fy, fz])
                                line = next(log)
             
-                        if ("Reintegrating step number" in line):
+                        if ("Reintegrating step number" in line): # Indicates last step did not meet criteria. 
                             reint += 1
-                            print(len(xyz_temp))
-                            xyz_temp = xyz_temp[:-6]
-                            forces_temp = forces_temp[:-6]
-                            vel_temp = vel_temp[:-6]
-                            print('beep ', len(xyz_temp))
+                            # Delete last n entries in xyz, force, and velocity to allow for overwritting of bad step.
+                            xyz_temp = xyz_temp[:-num_atoms]
+                            forces_temp = forces_temp[:-num_atoms]
+                            vel_temp = vel_temp[:-num_atoms]
             
-                        if ("Gradient from 2nd-fit:" in line):
+                        if ("Gradient from 2nd-fit:" in line): # Indicates negative forces are to follow in units of Hartree/Bohr.  
 
                             line = next(log)
-
+                            # Parse for all following gradient components
                             while (line.strip()):
                                 tokens = line.split()
-                                x = float(tokens[3].replace('D', 'E')) 
-                                y = float(tokens[5].replace('D', 'E')) 
-                                z = float(tokens[7].replace('D', 'E')) 
-                                force_hb = [x, y, z]
-                                forces_temp.append(force_hb)
+                                fx = float(tokens[3].replace('D', 'E')) 
+                                fy = float(tokens[5].replace('D', 'E')) 
+                                fz = float(tokens[7].replace('D', 'E'))  
+                                forces_temp.append([fx, fy, fz])
                                 line = next(log)
         
-                        if ("Summary information for step" in line):
+                        if ("Summary information for step" in line): # Indicates completion of step (whether it will be later reintegrated of not.). If statement added to prevent reading of predicited information.
 
                             while ("Cartesian coordinates: (bohr)" not in line):
                                 line = next(log)
@@ -172,69 +187,79 @@ class Reader():
                                     tokens = line.split()
                                     if ("MW" in line.split()):
                                         break
+                                    #Python does not recognize scientific notation using M * D+N. Replace D with E to allow for conversion to floating point number
                                     x = float(tokens[3].replace('D', 'E')) 
                                     y = float(tokens[5].replace('D', 'E')) 
                                     z = float(tokens[7].replace('D', 'E')) 
+                                    # Add cartesian coordinates to xyz_temp
                                     xyz_temp.append([x, y, z])
                                     line = next(log)
 
-                            while ("MW cartesian velocity: (sqrt(amu)*bohr/sec)" not in line):
+                            while ("MW cartesian velocity: (sqrt(amu)*bohr/sec)" not in line): # Indiicates 
                                 line = next(log)
                             line = next(log)
                             while(line.strip()):
+                                # Parse velocity values
                                 tokens = line.split()
                                 if("TRJ" in tokens[0] or 'I' not in tokens[0]):
                                     break
-                                x = (tokens[3])
-                                y = (tokens[5])
-                                z = (tokens[7])
-                                vel_temp.append([x,y,z])
+                                vx = (tokens[3])
+                                vy = (tokens[5])
+                                vz = (tokens[7])
+                                # Add xyz components of velocity to vel_temp
+                                vel_temp.append([vx,vy,vz])
                                 line=next(log)
 
-                        if ("Trajectory summary" == line.strip()): # Parse N Kinenetic and Potential Energies, where MaxSteps = N
+                        if ("Trajectory summary" == line.strip()): # Indicates end of trajectory
+                            # Parse N Kinenetic and Potential Energies where MaxSteps = N
                             while ("e" in line.strip()):
                                 line = next(log)
                             while ("Max Error" not in line):
+                                
                                 e_trig+=1
+                                # Parse and append kinetic and potential energy values at each step of Trajectory summary. 
                                 tokens = line.split()
                                 e_kin_h = float(tokens[1])
                                 e_pot_h = float(tokens[2])
                                 eng_pot_temp.append(e_pot_h)
                                 eng_kin_temp.append(e_kin_h)
                                 line = next(log)
-                            traj =  tj.Trajectory(name = filename, units = cv.AU, sym = sym_temp*num_points, xyz = xyz_temp, n_atoms = num_atoms, vel = vel_temp, force = forces_temp, ke = eng_kin_temp, pe = eng_pot_temp, mult = multiplicity, charge = charge)
-                            trajectories.append(traj)
-                            xyz_temp = xyz_temp[0:num_atoms]
-                            print(len(xyz_temp))
-                            print(len(xyz_temp))
+
+                            #Create new trajectory object using data parsed
+                            traj =  tj.Trajectory(name = filename, 
+                                                  units = cv.AU, 
+                                                  sym = sym_temp*num_points, 
+                                                  xyz = xyz_temp, 
+                                                  n_atoms = num_atoms, 
+                                                  vel = vel_temp, 
+                                                  force = forces_temp, 
+                                                  ke = eng_kin_temp, 
+                                                  pe = eng_pot_temp, 
+                                                  mult = multiplicity, 
+                                                  charge = charge)
+                            #Add trajectory to list of tranjectories
+                            datafile.trajectories.append(traj)
+                            #Reset appropriate temporary values.
+                            xyz_temp = []
                             forces_temp = forces_temp[0:num_atoms]
                             vel_temp = []
                             eng_pot_temp = []
                             eng_kin_temp = []
-                        last_line = line
 
                 print("Number of reintegrations", reint)
-                #print("Number of coord triggers", coordtr)
-                print("Energy Triggered?", e_trig)
-                print("E")
-                print(last_line)
-                #traj =  tj.Trajectory(name = filename, units = cv.AU, sym = sym_temp*num_points, xyz = xyz_temp, n_atoms = num_atoms, vel = vel_temp, force = forces_temp, ke = eng_kin_temp, pe = eng_pot_temp, mult = multiplicity, charge = charge)
-                #trajectories.append(traj)
-                #trajectories.pop(0)
-
-
             
             except Exception as e:
 
                 print(f"Error accessing file '{filename}': {e}")
                 print(traceback.format_exception(e))
-                return None
+                #If Error occurs in reading, return nothing to prevent use of bad data.
+                return None 
             else:
                 print(f"Success reading from file {filename}")
-                return trajectories
+                #Return list of all trajectories contained in .log file. 
+                return datafile 
 
-
-    def read_g_param(self, p_name):
+    def read_g_param(self, p_name): # Read all lines of parameter file used to specify options and title block for gaussian input files when extending a log file. 
         try:
             param_file = open(p_name, 'r')
             param = param_file.readlines()
@@ -245,15 +270,21 @@ class Reader():
             print(e)
 
 
-    def read(self, filename, format = 'intr'):
+    def read(self, filename, format = 'imp'):
         
+        # Dictionary of various read functions keyed by their associated file extension
         read_formats = {
             'log':self.read_log,
             'xyz':self.read_xyz,
             'inp':self.read_xyz,
             'npz':self.read_npz 
         }
-        file_ext = filename.split('.')[-1] if format == 'intr' else format            
+
+        # If implicit format declaration is used (format == 'imp', default), the file extension is used to call the appropriate function. 
+        # Otherwise, format can be explicitly declared by passing format = 'extension' for the format of your choice. 
+        file_ext = filename.split('.')[-1] if format == 'imp' else format 
+
+        # Try to call correct function. Error if an invalid extension is used. 
         try:
             return read_formats[file_ext](filename)
         

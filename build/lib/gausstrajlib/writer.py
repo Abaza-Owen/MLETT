@@ -9,7 +9,7 @@ class Writer():
     def __write_to_gjf_(self, trajectory, param, point = 0):
         pass
 
-    def __write_to_gjfs__(self, trajectories, param,  point = 0):
+    def __write_to_gjfs__(self, datafile, param,  point = 0):
         i = 0 
 
         chk_index = 0
@@ -21,7 +21,7 @@ class Writer():
             else:
                  chk_index += 1
 
-        for trajectory in trajectories: #write each trajectory the seperate 
+        for trajectory in datafile.trajectories: #write each trajectory the seperate xyz files for organiziation
             cur_traj_vel = trajectory.atom_vel if len(trajectory.atom_vel) >= trajectory.atomicity else []
             cur_traj_xyz = trajectory.atom_xyz
             cur_traj_sym = trajectory.atom_symbols
@@ -30,7 +30,7 @@ class Writer():
             multiplicity = trajectory.mult
             bonding = 0
 
-            basename = trajectory.name.split('.')[0]
+            basename = datafile.name.split('.')[0]
             outname = f"{basename}_T{i+1}.gjf"
             
             try:    
@@ -83,9 +83,11 @@ class Writer():
                             raise errors.NullWriteError()
 
                         if (num_energies != num_xyz_sets/num_atoms):
-                            print ('pppopo')
                             print(num_energies)
                             print(num_xyz_sets)
+                            print(a_xyz[0:6])
+                            print(a_xyz[6:12])
+                            print(a_xyz[-6:])
                             print(num_atoms)
                             raise errors.NullWriteError()
                         
@@ -119,6 +121,9 @@ class Writer():
                         print(f"An error occurred: {e}")
                         traceback.print_exception(e)
 
+
+    def __write_to_xyzs__(self, outname: str, trajectory, grad = True, low_e = float('-inf'), high_e = float('inf')):
+         pass
 
     def write(self, output, trajectory, grad = True, low_e = float('-inf'), high_e = float('inf'),):
         self.__write_to_xyz__(output, trajectory, grad = grad, low_e = low_e, high_e = high_e)

@@ -3,6 +3,7 @@ README.txt
 setup.py
 gausstrajlib/__init__.py
 gausstrajlib/conversions.py
+gausstrajlib/datafile.py
 gausstrajlib/errors.py
 gausstrajlib/pdp.py
 gausstrajlib/reader copy.py

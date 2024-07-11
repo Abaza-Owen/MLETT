@@ -55,20 +55,21 @@ class CommandLineHandler(): #small class which helps to clean and store command 
     
     def extend(self):
         param = self.reader.read_g_param(self.args['input path'][0])
-        trajectories = self.reader.read(self.args['input path'][1])
-        for trajectory in trajectories:
-            trajectory.convert()
-        self.writer.__write_to_gjfs__(trajectories, param)
+        datafile = self.reader.read(self.args['input path'][1])
+        for trajectory in datafile.trajectories:
+            if trajectory.units['dist'] != 'ang':
+                trajectory.convert(cv.MSA_CONVERSIONS)
+        self.writer.__write_to_gjfs__(datafile, param)
 
 
     def heatmap(self, plane = 'xy', bins = 250):
         files = self.args['input path']
         for file in files:
-            dataset = self.reader.read(file)
-            for trajectory in dataset:
+            datafile = self.reader.read(file)
+            for trajectory in datafile.trajectories:
                 if trajectory.units['dist'] != 'ang':
                     trajectory.convert(cv.MSA_CONVERSIONS)
-                self.plotter.datasets.append(trajectory)     
+            self.plotter.datasets.append(datafile)     
 
         self.plotter.heatmap(plane = plane, bins = bins)
         self.plotter.clear_datasets()
@@ -76,11 +77,11 @@ class CommandLineHandler(): #small class which helps to clean and store command 
     def scatter(self): #Plots one or more trajectories read from .log, .xyz, or .npz files. Useful for understanding 
         files = self.args['input path']
         for file in files:
-            dataset = self.reader.read(file)
-            for trajectory in dataset:
+            datafile = self.reader.read(file)
+            for trajectory in datafile.trajectories:
                 if trajectory.units['dist'] != 'ang':
                     trajectory.convert(cv.MSA_CONVERSIONS)
-                self.plotter.datasets.append(trajectory)  
+            self.plotter.datasets.append(datafile)  
 
         self.plotter.scatterplot()
         self.plotter.clear_datasets()

@@ -34,11 +34,11 @@ class GaussianTranslator(): #Object that facillitates the reading of .log files 
         def translate(self, input, output, grad = True, format = 'sgdml', low_e = float('-inf'), high_e = float('inf')):
                 reader = rd.Reader()
                 writer = wr.Writer()
-                trajectories = reader.read(input)
-                print(trajectories)
-                for i in range(len(trajectories)):
-                        trajectories[i].convert(self.conversions[format])
-                        writer.write(output, trajectories[i], grad = grad, low_e = low_e, high_e = high_e) 
+                datafile = reader.read(input)
+                for i in range(len(datafile.trajectories)):
+                        datafile.trajectories[i].convert(self.conversions[format])
+                        output = datafile.trajectories[i].name.split('.')[0] + str(i)  + '.xyz'
+                        writer.write(output, datafile.trajectories[i], grad = grad, low_e = low_e, high_e = high_e) 
 
 
     
