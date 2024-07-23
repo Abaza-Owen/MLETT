@@ -3,11 +3,12 @@
 import sys
 import os
 import traceback
-from gausstrajlib import translate as gt
-from gausstrajlib import pdp as plt
-from gausstrajlib import writer as wr
-from gausstrajlib import reader as rd
-from gausstrajlib import conversions as cv 
+import numpy as np
+from GTT import translate as gt
+from GTT import pdp as plt
+from GTT import writer as wr
+from GTT import reader as rd
+from GTT import conversions as cv 
 
 class CommandLineHandler(): #small class which helps to clean and store command line arguments
     
@@ -28,17 +29,16 @@ class CommandLineHandler(): #small class which helps to clean and store command 
         except Exception as e:
         
             print(e)
-            print(traceback.format_exc())
+            traceback.print_exception(e)
             self.print_usage_and_exit()
 
         
     def print_usage_and_exit(self):
         
-        print("Incorrect number of arguments")
-        print("Use: python gt-cli.py <mode> <path-in> or python gt-cli.py <path-in>")
-        print("Recognized modes are -d and -f")
-        print("Note that if reading a single file, the input must point to file ending in .log")
-        print("See the readme file for more information")
+        print("Incorrect arguments")
+        print("Use: ./gt-cli.py <mode> <options> <path-in> (<path-out> for some utilities only)")
+        print("Recognized modes are convert, extend, filter, heatmap, and scatter.")
+        print("See the README file for more information")
         sys.exit(1)
 
     def run(self):
@@ -54,15 +54,27 @@ class CommandLineHandler(): #small class which helps to clean and store command 
         modes[self.args['mode']]()
     
     def extend(self):
-        param = self.reader.read_g_param(self.args['input path'][0])
-        datafile = self.reader.read(self.args['input path'][1])
+        try:    
+            param = self.reader.read_g_param(self.args['input path'][0])
+            datafile = self.reader.read(self.args['input path'][1])
+        except IndexError as e:
+            print("Not enough files passed as arguments. Check that a parameter file was included.")
+            sys.exit()
         for trajectory in datafile.trajectories:
             if trajectory.units['dist'] != 'ang':
                 trajectory.convert(cv.MSA_CONVERSIONS)
         self.writer.__write_to_gjfs__(datafile, param)
 
 
-    def heatmap(self, plane = 'xy', bins = 250):
+    def heatmap(self):
+        S = self.args['S']
+        
+        bins = self.args['bins']
+
+        if len(S) != 2:
+            print ("Incorrect S matrix size.")
+            return
+        
         files = self.args['input path']
         for file in files:
             datafile = self.reader.read(file)
@@ -71,33 +83,152 @@ class CommandLineHandler(): #small class which helps to clean and store command 
                     trajectory.convert(cv.MSA_CONVERSIONS)
             self.plotter.datasets.append(datafile)     
 
-        self.plotter.heatmap(plane = plane, bins = bins)
+        self.plotter.heatmap(bins = bins, S = S)
         self.plotter.clear_datasets()
 
     def scatter(self): #Plots one or more trajectories read from .log, .xyz, or .npz files. Useful for understanding 
         files = self.args['input path']
         for file in files:
+            # Read each data containing file in input
             datafile = self.reader.read(file)
             for trajectory in datafile.trajectories:
                 if trajectory.units['dist'] != 'ang':
+                # Convert units of distance if necessary
                     trajectory.convert(cv.MSA_CONVERSIONS)
-            self.plotter.datasets.append(datafile)  
+            self.plotter.datasets.append(datafile)
+            # Add to plotter objects data holding container
 
+        #Call scatterplot function of plotter object
         self.plotter.scatterplot()
         self.plotter.clear_datasets()
 
     def sort_by_element(self):
-        pass
-        
-    def trim(self):
+        #loop through passed input arguments 
+        for file in self.args['input path']:
+            datafile = self.reader.read(file)
+            print(datafile.trajectories)
+            # Read each data-containing file
+            for trajectory in datafile.trajectories:
+                #gather necessary data from read
+                xyz = trajectory.atom_xyz
+                force = trajectory.atom_forces
+                sym = trajectory.atom_symbols
+                k_e = trajectory.kin_energy
+                p_e = trajectory.pot_energy
+                num_atoms = trajectory.atomicity
+                
+                # Group lists pointwise
+                point_coords = [[xyz[j] for j in range(num_atoms * i, (num_atoms)*(i+1))] for i in range(int(len(xyz)/num_atoms))]
+                point_force = [[force[j] for j in range(num_atoms * i, (num_atoms)*(i+1))] for i in range(int(len(force)/num_atoms))]
+                point_sym = [[sym[j] for j in range(num_atoms * i, (num_atoms)*(i+1))] for i in range(int(len(sym)/num_atoms))]
+                #Compose to combined array using list comprehension
+                points = []
+                for i in range(len(point_coords)):
+                    point = []
+                    for j in range(len(point_coords[i])):
+                        point.append([point_sym[i][j], 
+                                      point_coords[i][j],
+                                      point_force[i][j]]
+                                      )
+                    points.append(point)
 
-        for file in self.args('input path'):
-            trajectories = self.reader.read(file)
-            match self.args['options']:
-                case 'a':
-                       pass           
+                #Sort the array in accordance to atom symbol
+                for i in range(len(points)): 
+                    points[i] = sorted(points[i], key = lambda x : x[0])
+
+                #Disassemble to 3 - 2d lists
+                point_sym = [atom[0] for point in points for atom in point ]
+                point_coords = [atom[1] for point in points for atom in point]
+                point_force = [atom[2] for point in points for atom in point]
+
+                trajectory.atom_xyz = point_coords
+                trajectory.atom_symbols = point_sym
+                trajectory.kin_energy = k_e
+                trajectory.pot_energy = p_e
+                trajectory.atom_forces = point_force
+            
+                self.writer.write(datafile.name.split('.')[0] + 'sorted.xyz', trajectory)
+                
+        
+    def trim(self): 
+        
+        l_b = self.args['loweng']
+        u_b = self.args['higheng']
+
+        S = self.args['S']
+
+        max_dist = self.args['dist']
+
+        # TBA: Code parsing for options arguments
+        match self.args['options']:
+                case 'somethingsomethingsomething':
+                       pass
+                case 'somethingelse':
+                    pass
+                case 'cool':
+                    pass      
                 case _:
                     pass
+
+        for file in self.args['input path']:
+            datafile = self.reader.read(file)
+            for trajectory in datafile.trajectories:
+                xyz = trajectory.atom_xyz
+                vel = trajectory.atom_vel
+                force = trajectory.atom_forces
+                sym = trajectory.atom_symbols
+                k_e = trajectory.kin_energy
+                p_e = trajectory.pot_energy
+                num_atoms = trajectory.atomicity
+                
+                # Group pointwise
+                point_coords = [[xyz[j] for j in range(num_atoms * i, (num_atoms)*(i+1))] for i in range(int(len(xyz)/num_atoms))]
+                point_vel = [[vel[j] for j in range(num_atoms * i, (num_atoms)*(i+1))] for i in range(int(len(vel)/num_atoms))]
+                point_force = [[force[j] for j in range(num_atoms * i, (num_atoms)*(i+1))] for i in range(int(len(force)/num_atoms))]
+                point_sym = [[sym[j] for j in range(num_atoms * i, (num_atoms)*(i+1))] for i in range(int(len(force)/num_atoms))]
+
+                
+
+                print(len(point_coords))
+                i = 0
+                while i< len(point_coords):
+                    atom_one = np.array(point_coords[i][S[0]])
+                    atom_two = np.array(point_coords[i][S[1]])
+                    dist_vec = atom_two - atom_one
+                
+                    if np.linalg.norm(dist_vec) > max_dist or (p_e[i] < l_b or p_e[i] > u_b):
+                        point_coords.pop(i)
+                        point_force.pop(i)
+                        p_e.pop(i)
+                        point_sym.pop(i)
+                        try:
+                            k_e.pop(i)
+                        except Exception as e:
+                            pass
+                        try:
+                            point_vel.popmesh(i)
+                        except Exception as e:
+                            pass
+                    
+                    i+=1
+
+                #flatten to 2d arrays
+                point_coords = [inner for outer in point_coords for inner in outer]
+                point_vel = [[inner for outer in point_vel for inner in outer]]
+                point_force = [inner for outer in point_force for inner in outer]
+                point_sym = [inner for outer in point_sym for inner in outer]
+                
+                #apply changes to trajectory appropriately
+                trajectory.atom_xyz = point_coords
+                trajectory.atom_symbols = point_sym
+                trajectory.kin_energy = k_e
+                trajectory.pot_energy = p_e
+                trajectory.atom_vel = point_vel
+                trajectory.atom_force = point_force
+            
+                self.writer.write(datafile.name.split('.')[0] + 'trimmed.xyz', trajectory)
+
+                
 
         
 
@@ -107,15 +238,10 @@ class CommandLineHandler(): #small class which helps to clean and store command 
         except Exception as e:
             print (e)
 
-
         include_gradient = True
         format = 'sgdml'
-        l_b = float('-inf')
-        u_b = float('inf')
-        
-        #if not self.input_path.endswith('.log'):
-        
-            #self.print_usage_and_exit()
+        l_b = self.args['loweng']
+        u_b = self.args['higheng']
         
         if self.args['options']: #Set appropriate parameters based on user specificed arguments
         
@@ -128,19 +254,6 @@ class CommandLineHandler(): #small class which helps to clean and store command 
             
             if 'r' in self.args['options']:
                 format = 'raw'
-
-            if 'ec' in self.args['options']:
-                try:
-                    l_b = float(input("Input the minimum potential energy to be included in Hartree. (New line for no lower bound)"))
-                except ValueError as e:
-                    print("No valid value found. Set lower bound to negative infinity.")
-                    l_b = float('-inf')
-                try:
-                    u_b = float(input("Input the maximum potential energy to be inlcuded in Hartree. (New line for no upper bound)"))
-                except ValueError as e:
-
-                    print("No valid value found. Set upper bound to infinity.")
-                    u_b = float('inf')
 
             if 'd' in self.args['options']: #Convert all .log files in current working directory 
         
@@ -166,7 +279,16 @@ class CommandLineHandler(): #small class which helps to clean and store command 
         input_path = []
         output_path = None
 
+        s_matrix = []
+
+        dist_max = float('inf')
+
+        l_e = float('-inf')
+        h_e = float('inf')
+
         start = 0
+
+        bins = 250
 
         for i in range(len(args)):
             if 'gt-ucli' in args[i]:
@@ -174,28 +296,74 @@ class CommandLineHandler(): #small class which helps to clean and store command 
         
 
         mode = args[start + 1]
+
         match mode:
-            case 'convert' | 'group':
-                for string in args:
-                    if string[0] == '-':
-                        options = string 
-                    elif string.endswith('.log'):
-                        input_path.append(string)
-                    elif '.' in string and not string.endswith('ucli'):
-                        output_path = string
-            #case 'group':   
+            case 'convert':
+                for i in range(len(args)):
+                    if '--lb' in args[i]:
+                        try:
+                            l_e = float(args[i+1])
+                        except Exception as e:
+                            print('Lower bound energy could not be converted to float')
+                            sys.exit()                    
+                    if '--hb' in args[i]:
+                        try:
+                            h_e = float(args[i+1])
+                        except Exception as e:
+                            print('High bound energy could not be converted to float')
+                            sys.exit()
+                    elif args[i][0] == '-':
+                        options = args[i] 
+                    elif args[i].endswith('.log'):
+                        input_path.append(args[i])
+                    elif '.' in args[i] and not args[i].endswith('ucli'):
+                        output_path = args[i]
             case 'scatter' | 'heatmap':
-                for string in args:
-                    if string[0] == '-':
-                        options = string 
-                    elif '.' in string and not string.endswith('ucli'):
-                        input_path.append(string) 
+                for i in range(len(args)):
+                    if '--S' in args[i]:
+                        s_matrix.append(int(args[i+1]))
+                        s_matrix.append(int(args[i+2]))
+                    if '--b' in args[i]:
+                        bins = int(args[i+1])
+                    elif args[i][0] == '-':
+                        options = args[i]
+                    elif '.' in args[i] and not args[i].endswith('ucli'):
+                        input_path.append(args[i]) 
             case 'extend':
                 for string in args:
-                    if string[0] == '-':
-                        options = string
-                    elif string.endswith('.inp') or string.endswith('.log'):
+                    if string.endswith('.inp') or string.endswith('.log'):
                         input_path.append(string)
+            case 'trim' | 'group':
+                for i in range(len(args)):
+                    if args[i].endswith('.log') or args[i].endswith('.xyz'):
+                        print(args[i])
+                        input_path.append(args[i])
+                    if '--S' in args[i]:
+                        try:
+                            s_matrix.append(int(args[i+1]))
+                            s_matrix.append(int(args[i+2]))
+                        except Exception as e:
+                            print('s-matrix values could not be converted to integer.')
+                            sys.exit()
+                    if '--d' in args[i]:
+                        try:
+                            dist_max = float(args[i+1])
+                        except Exception as e:
+                            print('Maximum distance could not be converted to float')
+                            sys.exit()
+                    if '--lb' in args[i]:
+                        try:
+                            l_e = float(args[i+1])
+                        except Exception as e:
+                            print('Lower bound energy could not be converted to float')
+                            sys.exit()                    
+                    if '--hb' in args[i]:
+                        try:
+                            h_e = float(args[i+1])
+                        except Exception as e:
+                            print('High bound energy could not be converted to float')
+                            sys.exit()
+
             case _:
                 self.print_usage_and_exit()
 
@@ -203,7 +371,13 @@ class CommandLineHandler(): #small class which helps to clean and store command 
             'mode':mode,
             'options':options,
             'input path':input_path,
-            'output path':output_path
+            'output path':output_path,
+            'S':s_matrix,
+            'dist':dist_max,
+            'loweng':l_e,
+            'higheng':h_e,
+            'bins':bins
+
         }
         return args     
         
