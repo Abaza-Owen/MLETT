@@ -18,10 +18,19 @@ If using sgdml, this .xyz file can then be read directly from a python script us
 or can be converted to a numpy array file (.npz) using the script sgdml_dataset_fromextxyz.py <filename>
 
 MSA will read the .xyz file directly by default.
+
+GTT has additional functionalities including plotting a dataset, or group of datasets in 3D space, plotting bond distances vs energy as a heatmap, 
+trimming dataset by interatomic distances, grouping like atoms together in a dataset file to help take advantage of symmetry, and creating .gjf files from a .log file.
+
+Most of these functionalities were tasks that I found useful or necessary in the process of developing models from our test system and so they were included here. 
+If you meet a challenge that requires a different functionality feel free to reach out to me and I will do my best to accomodate.  
 ____________________________________________________________________________________________________________________________________________________________________________
 Requirements: 
 
 	Python Version >= 3.6
+	  Numpy
+	  Scipy 
+	  Matplotlib
 
 	A properly configured Python virtual environment
 
@@ -49,10 +58,10 @@ Usage:
 In order to run these scripts, simply open a UNIX terminal window
 and run the following command:
 
-	python gt-cli.py -<options> <input .log filename> <output .xyz filename>
+	gt-ucli <mode> <options> <file-input> <file-output>
 	
-The ouput file name is optional, and if it is not included the output file will simply have
-the same name as the input file with the .xyz extension.
+The ouput file name is optional, and is only supported for certain modes/options. 
+if it is not included the output file will simply have the same name as the input file with the .xyz extension.
 
 
 Once it has run, your file should appear in the same directory as you have specified. 
@@ -68,7 +77,7 @@ input method:
 -d 		(directory) Parse and Write from all .log files in current working directory
 output content:
 -g		(gradient) Include gradient/force in output XYZ, necessary for sGDML, optional for MSA
--nc		(no constraints) Don't filter out points wiht potential energies above a certain threshold 
+-ec		(energy constraints) Filter out points wiht potential energies above a certain threshold. You will be prompted for higher and lower constraints once the program runs. 
 output format:
 -s 		(sGDML) SGDML file format (Force: kcal/mol*ang, Dist: Ang, Eng: kcal/mol) (default)
 -m		(MSA) MSA file format (Force: Hartree/Bohr, Dist: Ang, Eng: Hartree)

@@ -1,0 +1,46 @@
+Date : 2024-07-05 16:55:22
+Directory : /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib
+Total : 19 files,  232125 codes, 146 comments, 4248 blanks, all 236519 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Log      |          3 |    231,118 |          0 |      3,842 |    234,960 |
+| Python   |         16 |      1,007 |        146 |        406 |      1,559 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                          | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                             |         19 |    232,125 |        146 |      4,248 |    236,519 |
+| . (Files)                                                                                     |         12 |    231,584 |         46 |      4,004 |    235,634 |
+| auxilaryscripts                                                                               |          7 |        541 |        100 |        244 |        885 |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                      | language | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/BOMD-TS_T3.log                  | Log      |    133,776 |          0 |      2,211 |    135,987 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/T4_MCC.log                      | Log      |     95,178 |          0 |      1,428 |     96,606 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/__init__.py                     | Python   |          1 |          0 |          1 |          2 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/auxilaryscripts/faster.py       | Python   |         37 |         34 |         15 |         86 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/auxilaryscripts/gncheatmap.py   | Python   |         29 |          4 |         12 |         45 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/auxilaryscripts/onceagain.py    | Python   |         36 |         10 |         18 |         64 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/auxilaryscripts/opt.py          | Python   |         29 |         10 |         13 |         52 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/auxilaryscripts/plot.py         | Python   |        112 |          3 |         48 |        163 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/auxilaryscripts/properplot.py   | Python   |         39 |          9 |         11 |         59 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/auxilaryscripts/translateold.py | Python   |        259 |         30 |        127 |        416 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/bmd20.log                       | Log      |      2,164 |          0 |        203 |      2,367 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/conversions.py                  | Python   |         47 |         11 |         12 |         70 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/errors.py                       | Python   |          4 |          0 |          2 |          6 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/ppp.py                          | Python   |         70 |          7 |         35 |        112 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/reader.py                       | Python   |        206 |          4 |         61 |        271 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/test.py                         | Python   |         11 |          0 |          2 |         13 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/trajectory.py                   | Python   |         57 |          5 |          7 |         69 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/translate.py                    | Python   |         21 |         17 |         18 |         56 |
+| /home/omabaza/Documents/MLAddtionalMaterials/GTT/gausstrajlib/writer.py                       | Python   |         49 |          2 |         24 |         75 |
+| Total                                                                                         |          |    232,125 |        146 |      4,248 |    236,519 |
++-----------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
