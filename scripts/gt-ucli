@@ -4,11 +4,11 @@ import sys
 import os
 import traceback
 import numpy as np
-from GTT import translate as gt
-from GTT import pdp as plt
-from GTT import writer as wr
-from GTT import reader as rd
-from GTT import conversions as cv 
+from MLETT import translate as gt
+from MLETT import pdp as plt
+from MLETT import writer as wr
+from MLETT import reader as rd
+from MLETT import conversions as cv 
 
 class CommandLineHandler(): #small class which helps to clean and store command line arguments
     
