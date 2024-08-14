@@ -11,7 +11,7 @@ setup(
 	license='MIT License',
 	packages = find_packages(),
     install_requires = [
-        'numpy>=2.0',# Any version of numpy above 2
-        'matplotlib>=3.4.3', # Ensure matplotlib version 3.4.3 or newer'],
+        'numpy>=2.0',
+        'matplotlib>=3.4.3',],
 	scripts = ['scripts/gt-ucli']
 	)
