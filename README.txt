@@ -28,9 +28,8 @@ ________________________________________________________________________________
 Requirements: 
 
 	Python Version >= 3.6
-	  Numpy
-	  Scipy 
-	  Matplotlib
+	  Numpy >= 2.0
+	  Matplotlib >= 3.4.3
 
 	A properly configured Python virtual environment
 
@@ -71,39 +70,48 @@ correctly between the xyz file and log file. Note that the step numbers in the
 xyz file as Gaussian16 does an initilization step that gathers the inital 
 geometry and velocities with no calculation of gradient or potential energy. 
 
-option		function
-input method:
--f		(file) Parse and Write from one specified .log file (default)
--d 		(directory) Parse and Write from all .log files in current working directory
-output content:
--g		(gradient) Include gradient/force in output XYZ, necessary for sGDML, optional for MSA
--ec		(energy constraints) Filter out points wiht potential energies above a certain threshold. You will be prompted for higher and lower constraints once the program runs. 
-output format:
--s 		(sGDML) SGDML file format (Force: kcal/mol*ang, Dist: Ang, Eng: kcal/mol) (default)
--m		(MSA) MSA file format (Force: Hartree/Bohr, Dist: Ang, Eng: Hartree)
--r		(Raw) Raw file format. For testing only. (Force: Hartree/Bohr, Dist: Bohr, Eng: Hartree) 
+mode:
+  "convert":
+    options:		
+      input method:
+        -f		          (file) Parse and Write from one specified .log file (default)
+        -d 	  	        (directory) Parse and Write from all .log files in current working directory
+    output content:
+        -g	    	      (gradient) Include gradient/force in output XYZ, necessary for sGDML, optional for MSA
+        -ec	    	      (energy constraints) Filter out points wiht potential energies above a certain threshold. You will be prompted for higher and lower constraints once the program runs. 
+    output format:
+        -s              (sGDML) SGDML file format (Force: kcal/mol*ang, Dist: Ang, Eng: kcal/mol) (default)
+        -m		          (MSA) MSA file format (Force: Hartree/Bohr, Dist: Ang, Eng: Hartree)
+        -r  	  	      (Raw) Raw file format. For testing only. (Force: Hartree/Bohr, Dist: Bohr, Eng: Hartree) 
+    
+    "trim":
+      options:
+        --S a1 a2         (vector) Establishes interatomic vector representing which pairing should be used to assess a maximum distance
+        --d max_dist      (float distance) Specifies the maximum distance between the atoms specified in the 'S' vector a given datapoint can have without being trimmed
+        --lb min_energy   (float energy) Specifies minimum energy, in whatever unit the dataset original had, that a datapoint can have without being trimmed
+        --hb max_energy   (float energy) Specifies minimum energy, in whatever unit the dataset original had, that a datapoint can have without being trimmed
+    
+    "heatmap":
+      options:
+        --S a1 a2         (vector) Establishes interatomic vector representing which pairing should be used to assess interatomic distance for plotting
+        --bins integer    (integer) Specifies the number of bins for the heatmap. A higher number corresponds to finer detail, but smaller datasets tend to suffer in visibility.
+    
+    "group":
+      n/a as of the latest release
+    
+    "scatter":
+      n/a as of the latest release
 
-Input filenames and output filenames will be ignored if the -d option is used. All .log files in the 
-directory will be parsed and their output will be written to a file corresponding to the parent filename
-with the .xyz extension.
+Input filenames and output filenames will be ignored if the -d option is used with the convert functionality. 
+All .log files in the directory will be parsed and their output will be written to a file corresponding to the parent filename
+with the .xyz extension substituted for .log.
 
-It is important to note that this script was written with BOMD AM1 trajectories
+It is important to note that this script was written with BOMD AM1 and wB97XD trajectories
 in mind. If you are finding that it does not work as expected for a Gaussian job
 using a different method or level of theory you can try to modify the script.
 Otherwise, please email me a copy of the script that you are using along with the output file
 it is not working correctly with, and I will try to modify the script to work for your job as
 soon as possible.
-
-Important: There seems to be a small issue with restarting trajectories from a failed previous run,
-where although the time printed in the log file as being 0.0000fs, but the geometry is different
-from the orientation input in the log file. I am not sure if this is an issue with Gaussian itself
-or Gaussview, where the input gjf was generated, but I am not sure which value is correct or which forces coerrespond 
-correctly with the first step in these cases. If all other points match the log file in such a job,
-I would recommend manually removing the first step in the xyz file due to this uncertainty.
-I have not observed this issue when starting a trajectory from the script designed to generate 
-random velocities. Again, gaussian log files can be somewhat lengthy and sometimes inconsistent,
-and my code is defintely not infailable. Be sure to always verify at least a few points,
-especially recalculated points to ensure that you are using valid data for training.
 ____________________________________________________________________________________________________________________________________________________________________________
 Questions:
 Always feel free to shoot me an email at the address above. I will do my best to help you.
