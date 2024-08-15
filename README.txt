@@ -7,7 +7,7 @@ ________________________________________________________________________________
 Explanation:
 
 The Gaussian Trajectory Translation library and it's command line interface, 
-Gaussian Trajectory Translation - Unified Command Line Interface (gtt-ucli), 
+Gaussian Translation - Unified Command Line Interface (gt-ucli), 
 are designed to extract the forces, potential energies, and coordinates of all atoms in system
 at every step of a Gaussian BOMD trajectory simulation. These extracted values can be 
 converted from atomic units (a.u) to Ang and kcal/mol, which is the standard
