@@ -1,4 +1,4 @@
-Using the Gaussian Trajectory Translation and gt-cli Script
+Using the Machine Learning Energy Translation and Trimming and gt-cli Script
 6/4/2024
 Owen M. Abaza
 SUNY ESF
@@ -6,7 +6,7 @@ omabaza@syr.edu
 ____________________________________________________________________________________________________________________________________________________________________________
 Explanation:
 
-The Gaussian Trajectory Translation library and it's command line interface, 
+The Machine Learning Energy Translation and Trimming and it's command line interface, 
 Gaussian Translation - Unified Command Line Interface (gt-ucli), 
 are designed to extract the forces, potential energies, and coordinates of all atoms in system
 at every step of a Gaussian BOMD trajectory simulation. These extracted values can be 
@@ -19,7 +19,7 @@ or can be converted to a numpy array file (.npz) using the script sgdml_dataset_
 
 MSA will read the .xyz file directly by default.
 
-GTT has additional functionalities including plotting a dataset, or group of datasets in 3D space, plotting bond distances vs energy as a heatmap, 
+MLETT has additional functionalities including plotting a dataset, or group of datasets in 3D space, plotting bond distances vs energy as a heatmap, 
 trimming dataset by interatomic distances, grouping like atoms together in a dataset file to help take advantage of symmetry, and creating .gjf files from a .log file.
 
 Most of these functionalities were tasks that I found useful or necessary in the process of developing models from our test system and so they were included here. 
@@ -78,7 +78,6 @@ mode:
         -d 	  	        (directory) Parse and Write from all .log files in current working directory
     output content:
         -g	    	      (gradient) Include gradient/force in output XYZ, necessary for sGDML, optional for MSA
-        -ec	    	      (energy constraints) Filter out points wiht potential energies above a certain threshold. You will be prompted for higher and lower constraints once the program runs. 
     output format:
         -s              (sGDML) SGDML file format (Force: kcal/mol*ang, Dist: Ang, Eng: kcal/mol) (default)
         -m		          (MSA) MSA file format (Force: Hartree/Bohr, Dist: Ang, Eng: Hartree)
