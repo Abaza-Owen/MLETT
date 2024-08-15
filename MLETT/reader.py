@@ -1,7 +1,7 @@
-from GTT import trajectory as tj
-from GTT import datafile as df
+from MLETT import trajectory as tj
+from MLETT import datafile as df
 import numpy as np
-from GTT import conversions as cv
+from MLETT import conversions as cv
 import traceback
 import copy 
 

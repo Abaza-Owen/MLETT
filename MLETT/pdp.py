@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.cm as cm
 import sys
-from GTT import trajectory
-from GTT import reader
+from MLETT import trajectory
+from MLETT import reader
 from matplotlib.colors import LogNorm
 from scipy.spatial import ConvexHull
 

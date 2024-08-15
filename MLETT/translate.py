@@ -6,11 +6,11 @@ import traceback
 #used for debugging. Debugging prints are commented out by default but can be reactivated in case of unexpected behavior
 import math
 #used for rounding down when indexing in write function.
-#from GTT import trajectory
-from GTT import reader as rd
-from GTT import writer as wr
-#from GTT import errors
-from GTT import conversions as cv
+#from MLETT import trajectory
+from MLETT import reader as rd
+from MLETT import writer as wr
+#from MLETT import errors
+from MLETT import conversions as cv
 
 
 #dictionary for converting atomic numbers to symbols. Common symbols in our research used only. 

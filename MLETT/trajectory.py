@@ -6,7 +6,7 @@ import traceback
 #used for debugging. Debugging prints are commented out by default but can be reactivated in case of unexpected behavior
 import math
 #used for rounding down when indexing in write function.
-from GTT import conversions as cv
+from MLETT import conversions as cv
 
 class Trajectory():  #Trajectory object represents a completed Gaussian Trajectory. Basis for TrajData class. Defines lists (arrays) which hold information about atomic system. 
 
