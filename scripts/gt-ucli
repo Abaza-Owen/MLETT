@@ -29,7 +29,7 @@ class CommandLineHandler(): #small class which helps to clean and store command 
         except Exception as e:
         
             print(e)
-            traceback.print_exception(e)
+            #traceback.print_exception(e)
             self.print_usage_and_exit()
 
         
