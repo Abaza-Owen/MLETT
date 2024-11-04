@@ -113,7 +113,7 @@ class Reader(): #Object to handling reading of several types of computational ch
 
                         if ("Charge = " in line and "Multiplicity = " in line ): #Get system charge and Multiplicity. 
 
-                            tokens = line.split
+                            tokens = line.split()
 
                             try:
                                 charge = int(tokens[2])
