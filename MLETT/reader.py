@@ -111,17 +111,17 @@ class Reader(): #Object to handling reading of several types of computational ch
                     last_line = ''
                     for line in log:
 
-                        if ("Charge = " in line and "Multplicity = " in line ): #Get system charge and Multiplicity. 
+                        if ("Charge = " in line and "Multiplicity = " in line ): #Get system charge and Multiplicity. 
 
                             tokens = line.split
 
                             try:
-                                multiplicity = int(tokens[2])
+                                charge = int(tokens[2])
                             except ValueError as e:
                                 print(e)
                                 print("Could not convert multiplicity to numeric.")
                             try:
-                                charge = int(tokens[5])
+                                multiplicity = int(tokens[5])
                             except ValueError as e:
                                 print(e)
                                 print("Could not convert multiplicity to numeric.")
