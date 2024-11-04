@@ -265,7 +265,7 @@ class Reader(): #Object to handling reading of several types of computational ch
             except Exception as e:
 
                 print(f"Error accessing file '{filename}': {e}")
-                print(traceback.format_exception(e))
+                #print(traceback.format_exception(e))
                 #If Error occurs in reading, return nothing to prevent use of bad data.
                 return None 
             else:
