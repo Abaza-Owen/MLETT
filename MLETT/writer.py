@@ -39,7 +39,7 @@ class Writer():
 
                     for line in param:
                         out.write(line)
-                    out.write('\n\n')
+                    out.write('\n')
                     out.write(f"{charge} {multiplicity}\n")
                     for j in range(len(cur_traj_sym[(point * num_atoms):((point+1)*num_atoms)])):
                         out.write(f"\t{cur_traj_sym[j]}\t")
@@ -47,7 +47,7 @@ class Writer():
                         for k in current_xyz:
                             out.write(f"{k}\t")
                         out.write('\n')
-                    out.write(f"\n\n{bonding}\n\n")
+                    out.write(f"\n{bonding}\n\n")
                     for j in range(len(cur_traj_vel[(point * num_atoms):((point+1)*num_atoms)])):
                         current_vel = cur_traj_vel[j]
                         x, y, z = current_vel
